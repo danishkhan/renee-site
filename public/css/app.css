@@ -48,7 +48,6 @@ pre.CodeRay .constant {
 
 pre.CodeRay .instance-variable {
   color: #FCEA97;
-  
 }
 
 pre.CodeRay .keyword {
@@ -61,12 +60,10 @@ pre.CodeRay .symbol {
 
 pre.CodeRay .integer {
   color: #f77;
-  
 }
 
 pre.CodeRay .comment {
   color: #BC9358;
-  
 }
 
 div.logo {
