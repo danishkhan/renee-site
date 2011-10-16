@@ -15,7 +15,7 @@ Renee is a new Rack-based library for expressing web applications. It seamlessly
 let you mix and match with any other framework. [Josh Hull](https://github.com/joshbuddy) thought this up
 when he started working on a new routing DSL for [Goliath](http://postrank-labs.github.com/goliath).
 
-For us, Sinatra delivered a new and simpler way to think about building web applications.
+For us, [Sinatra](http://www.sinatrarb.com/) delivered a new and simpler way to think about building web applications.
 The popularity of Sinatra both as a library and as a concept shows how enduring this shift has been.
 Sinatra was different from Rails because the DSL was lightweight, easy to read and
 combined routing and actions into just one file.
