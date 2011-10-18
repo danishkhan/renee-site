@@ -11,63 +11,67 @@ This site was been built using Renee and is [available on Github](https://github
 
 ## Concept (Why Renee?)
 
-Renee is a new Rack-based library for expressing web applications. It seamlessly integrates with Rack to
-let you mix and match with any other framework. [Josh Hull](https://github.com/joshbuddy) thought this up
-when he started working on a new routing DSL for [Goliath](http://postrank-labs.github.com/goliath).
+**Renee is a new way to think about writing web applications.**
 
-For us, [Sinatra](http://www.sinatrarb.com/) delivered a new and simpler way to think about building web applications.
-The popularity of Sinatra both as a library and as a concept shows how enduring this shift has been.
-Sinatra was different from Rails because the DSL was lightweight, easy to read and
-combined routing and actions into just one file.
+### Hierarchical
 
-We wondered though, as Sinatra fans, if we were to come up with a cleaner and more powerful DSL, what might that look like?
-Let's consider an example from Sinatra to see where we can do better:
+Traditionally, routing and controller logic have been separate. In Rails, for instance, your path is matched to a controller and an action. This does not reflect the hierarchical nature of REST.
+
+Consider a simple example. The route `/posts/45/comments`. Typically, you'd expect this to load the post with the id 45, and then load the comments on that post. In [Rails](http://rubyonrails.org/), your code to load a post and understand that parameter would have to be in both your posts controller and your comments controller. [Sinatra](http://www.sinatrarb.com/) does no better as it searches linearly though a set of routes to find a matching block and then executes it.
+
+To model this same idea in Renee, you could do the following:
 
     :::ruby
-    get '/blog/:id' do
-      Blog.get(params[:id])
-    end
-
-This is not too bad so far. The repetition of `:id` is a bit un-DRY, but not bad. Let's keep expanding upon this.
-
-    :::ruby
-    get '/blog/:id' do
-      Blog.get(params[:id])
-    end
-
-    put '/blog/:id' do
-      Blog.get(params[:id]).update_attributes(params)
-    end
-
-Now, we've retrieved blog in two places. Time to refactor. We'd normally create a before filter, with the same path.
-
-    :::ruby
-    before '/blog/:id' do
-      @blog = Blog.get(params[:id])
-    end
-
-    get '/blog/:id' do
-      @blog
-    end
-
-    put '/blog/:id' do
-      @blog.update_attributes(params)
-    end
-
-Now we've repeated the same path three times. With Renee, we can describe these kind of ideas in a simple,
-easy-to-read way. Here is the equivalent in Renee:
-
-    :::ruby
-    path 'blog' do
-      var do |id|
-        @blog = Blog.get(id)
-        get { halt @blog }
-        put { @blog.update(request.params); halt :ok}
+    run Renee do
+      path 'posts' do
+        var Integer do |id|
+          post = Posts.find(id)
+          path 'comments' do
+            get { render! "comments", :comments => post.comments }
+          end
+        end
       end
     end
 
-This web library is inspired by Sinatra, but offers an approach more inline with Rack itself, and lets you
-maximize code-reuse within your application.
+Suddenly, you have access to the previously referred to part of the path, namely, the `/posts/45` part. It's a locally scoped variable, as is the id, so you don't have to worry about anyone outside of it's scope having access to it.
+
+To find out more, take a look at the [routing methods](/routing) available to you.
+
+### Composability
+
+Renee lives and breathes inside of [Rack](http://rack.rubyforge.org/). Let's take a look at the example above and understand a little better what's going on. We'll modify it slightly for the sake of clarity:
+
+    :::ruby
+    run Renee do
+      p request.path_info     # printing
+      path "posts" do
+        p request.path_info   # printing
+        var Integer do |id|
+          p request.path_info # printing
+          halt :ok
+        end
+      end
+    end
+
+If you run a request with the path `/posts/12` through here, you'll get three print statements:
+
+    :::ruby
+    "/posts/123"
+    "/123"
+    ""
+
+The PATH_INFO is being consumed by each scope. If you don't halt, don't worry, your request will get put back together again after it falls out of each block. This let's you move part of your application around without fearing how the route is being consumed.
+
+### Rack integration
+
+Renee loves Rack. To run a arbitrary rack end point, you can use `#run!` to stop execution and pass off your request to an Rack application. An example:
+
+    :::ruby
+    run Renee do
+      path "posts" do
+        run! PostsEndpoint # this can be any Rack application
+      end
+    end
 
 ## Getting started
 
