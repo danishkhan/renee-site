@@ -73,6 +73,8 @@ Renee loves Rack. To run a arbitrary rack end point, you can use `#run!` to stop
       end
     end
 
+To find out more about integrating with rack, take a look at [rack integration](/rack-integration) to find out more!
+
 ## Getting started
 
 ### Installation
