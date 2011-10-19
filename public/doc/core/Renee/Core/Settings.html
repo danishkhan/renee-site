@@ -183,7 +183,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#include-instance_method" title="#include (instance method)">- (Object) <strong>include</strong>(mod) </a>
+      <a href="#include-instance_method" title="#include (instance method)">- (Object) <strong>include</strong>(*mods) </a>
     
 
     
@@ -196,7 +196,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Module(s) to include into the base application.</p>
 </div></span>
   
 </li>
@@ -229,7 +229,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#register_variable_type-instance_method" title="#register_variable_type (instance method)">- (Object) <strong>register_variable_type</strong>(name, matcher) </a>
+      <a href="#register_variable_type-instance_method" title="#register_variable_type (instance method)">- (Renee::Core::Matcher) <strong>register_variable_type</strong>(name, matcher) </a>
     
 
     
@@ -242,7 +242,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Registers a new variable type for use within Application::Routing#variable and others.</p>
 </div></span>
   
 </li>
@@ -417,25 +417,54 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
       <div class="method_details first">
   <p class="signature first" id="include-instance_method">
   
-    - (<tt>Object</tt>) <strong>include</strong>(mod) 
+    - (<tt>Object</tt>) <strong>include</strong>(*mods) 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Module(s) to include into the base application.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>mods</span>
+      
+      
+        <span class='type'>(<tt>Module</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Modules to include.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-32
-33
-34</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 34</span>
 
-<span class='kw'>def</span> <span class='id include'>include</span><span class='lparen'>(</span><span class='id mod'>mod</span><span class='rparen'>)</span>
-  <span class='id includes'>includes</span> <span class='op'>&lt;&lt;</span> <span class='id mod'>mod</span>
+<span class='kw'>def</span> <span class='id include'>include</span><span class='lparen'>(</span><span class='op'>*</span><span class='id mods'>mods</span><span class='rparen'>)</span>
+  <span class='id mods'>mods</span><span class='period'>.</span><span class='id each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id mod'>mod</span><span class='op'>|</span> <span class='id includes'>includes</span> <span class='op'>&lt;&lt;</span> <span class='id mod'>mod</span> <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -445,29 +474,90 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
       <div class="method_details ">
   <p class="signature " id="register_variable_type-instance_method">
   
-    - (<tt>Object</tt>) <strong>register_variable_type</strong>(name, matcher) 
+    - (<tt><span class='object_link'><a href="Matcher.html" title="Renee::Core::Matcher (class)">Renee::Core::Matcher</a></span></tt>) <strong>register_variable_type</strong>(name, matcher) 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Registers a new variable type for use within Application::Routing#variable and others.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The name of the variable.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>matcher</span>
+      
+      
+        <span class='type'>(<tt>Regexp</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A regexp describing what part of an arbitrary string to capture.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Matcher.html" title="Renee::Core::Matcher (class)">Renee::Core::Matcher</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A matcher</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-36
-37
-38
-39
-40
-41
 42
 43
 44
-45</pre>
+45
+46
+47
+48
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id register_variable_type'>register_variable_type</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id matcher'>matcher</span><span class='rparen'>)</span>
   <span class='id matcher'>matcher</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id matcher'>matcher</span>
@@ -558,7 +648,7 @@ views_path =&gt; &quot;./views&quot;</pre>
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 00:47:42 2011 by 
+  Generated on Wed Oct 19 01:52:07 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

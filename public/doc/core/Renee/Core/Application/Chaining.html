@@ -81,29 +81,109 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Defined Under Namespace</h2>
-<p class="children">
-   
-    
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Chaining/ClassMethods.html" title="Renee::Core::Application::Chaining::ClassMethods (module)">ClassMethods</a></span>
-    
-   
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Chaining/ChainingProxy.html" title="Renee::Core::Application::Chaining::ChainingProxy (class)">ChainingProxy</a></span>
-    
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Module for creating chainable methods. To use this within your own modules, first <code>include Chaining</code>, then,
+mark methods you want to be available with <code>chain_method :method_name</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
   
-</p>
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">module MoreRoutingMethods
+  include Chaining
+  def other_routing_method
+    # ..
+  end
+  chain_method :other_routing_method</pre>
+    
+  </div>
+
+
+</div>
 
 
 
 
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chain-instance_method" title="#chain (instance method)">- (Object) <strong>chain</strong>(blk, &amp;proxy) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
 
 
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="chain-instance_method">
+  
+    - (<tt>Object</tt>) <strong>chain</strong>(blk, &amp;proxy) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/chaining.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id chain'>chain</span><span class='lparen'>(</span><span class='id blk'>blk</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id proxy'>proxy</span><span class='rparen'>)</span>
+  <span class='id blk'>blk</span> <span class='op'>?</span> <span class='kw'>yield</span><span class='lparen'>(</span><span class='id blk'>blk</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'>ChainingProxy</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 00:47:42 2011 by 
+  Generated on Wed Oct 19 01:52:07 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>

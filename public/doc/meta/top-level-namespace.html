@@ -113,7 +113,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
+    <span class="summary_desc"><div class='inline'><p>Method for creating new Renee applications.</p>
 </div></span>
   
 </li>
@@ -135,18 +135,46 @@
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Method for creating new Renee applications.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id run'>run</span> <span class='const'>Renee</span> <span class='lbrace'>{</span>
+  <span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello renee</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></pre>
+    
+  </div>
+
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><a href="http://reneerb.com" target="_parent" title="http://reneerb.com">http://reneerb.com</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-30
-31
-32</pre>
+11
+12
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/renee.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='const'>Renee</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
   <span class='const'>Renee</span><span class='op'>::</span><span class='const'>RichCore</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
@@ -161,7 +189,7 @@
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 00:47:45 2011 by 
+  Generated on Wed Oct 19 01:52:09 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.9.2).
 </div>
