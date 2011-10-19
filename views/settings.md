@@ -13,7 +13,7 @@ The available configuration options are:
 
  * `views_path`: The path to the templates within an application.
  * `include`: Register a module within an application.
- * `regster_variable_type`: Allows [registration of arbitrary param types](/variable-types).
+ * `register_variable_type`: Allows [registration of arbitrary param types](/variable-types).
 
 More options are to come based on Renee configuration needs as they arise.
 
