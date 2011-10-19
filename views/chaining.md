@@ -30,4 +30,3 @@ Chains you build up are re-usable as well. In the above example, if we wanted we
 ## Implementing chains for your own modules
 
 If you wish to use chaining yourself in your own modules, simple include Application::Chaining. Then, mark chainable methods with `chain_method :method_name`.
-
