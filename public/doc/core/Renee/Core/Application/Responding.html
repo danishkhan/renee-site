@@ -90,6 +90,7 @@
 </div>
 <div class="tags">
   
+
 </div>
   <h2>Constant Summary</h2>
   
@@ -110,9 +111,10 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id halt!'>halt!</span> <span class='symbol'>:unauthorized</span> <span class='comment'># would return a 401.</span></pre>
+      <pre class="example code"><span class='id halt'>halt</span> <span class='symbol'>:unauthorized</span> <span class='comment'># would return a 401.</span></pre>
     
   </div>
+
 
 </div>
         </dt>
@@ -151,28 +153,6 @@
   <span class="summary_signature">
     
       <a href="#halt-instance_method" title="#halt (instance method)">- (Object) <strong>halt</strong>(*response) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Halts current processing to the top-level calling Renee application and uses that as a response.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#halt%21-instance_method" title="#halt! (instance method)">- (Object) <strong>halt!</strong>(*response) </a>
     
 
     
@@ -319,8 +299,7 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Halts current processing to the top-level calling Renee application and uses that as a response. This method requies that
-the PATH_INFO be completely consumed.</p>
+    <p>Halts current processing to the top-level calling Renee application and uses that as a response.</p>
 
 
   </div>
@@ -346,6 +325,7 @@ the PATH_INFO be completely consumed.</p>
   
 </ul>
 
+
   <h3>See Also:</h3>
   <ul class="see">
     
@@ -359,80 +339,14 @@ the PATH_INFO be completely consumed.</p>
       <pre class="lines">
 
 
-31
-32
-33
-34</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id halt'>halt</span><span class='lparen'>(</span><span class='op'>*</span><span class='id response'>response</span><span class='rparen'>)</span>
-  <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PATH_INFO hasn't been entirely consumed, you still have </span><span class='embexpr_beg'>#{</span><span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id inspect'>inspect</span><span class='rbrace'>}</span><span class='tstring_content'> left. Try putting a #remainder block around it. </span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
-  <span class='id halt!'>halt!</span> <span class='op'>*</span><span class='id response'>response</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="halt!-instance_method">
-  
-    - (<tt>Object</tt>) <strong>halt!</strong>(*response) 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-    <p>Halts current processing to the top-level calling Renee application and uses that as a response. Unlike #halt, this does
-not require the path to be consumed.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <h3>Parameters:</h3>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>response</span>
-      
-      
-        <span class='type'>(<tt>Object...</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>The response to use.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <h3>See Also:</h3>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#interpret_response-instance_method" title="Renee::Core::Application::Responding#interpret_response (method)">#interpret_response</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-40
-41
-42</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 40</span>
-
-<span class='kw'>def</span> <span class='id halt!'>halt!</span><span class='lparen'>(</span><span class='op'>*</span><span class='id response'>response</span><span class='rparen'>)</span>
   <span class='id throw'>throw</span> <span class='symbol'>:halt</span><span class='comma'>,</span> <span class='id interpret_response'>interpret_response</span><span class='lparen'>(</span><span class='id response'>response</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>?</span> <span class='id response'>response</span><span class='period'>.</span><span class='id first'>first</span> <span class='op'>:</span> <span class='id response'>response</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -484,29 +398,31 @@ not require the path to be consumed.</p>
   
 </ul>
 
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
 82
 83
 84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id interpret_response'>interpret_response</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id response'>response</span>
@@ -519,6 +435,7 @@ not require the path to be consumed.</p>
   <span class='kw'>when</span> <span class='const'>String</span>  <span class='kw'>then</span> <span class='const'>Renee</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span><span class='period'>.</span><span class='id finish'>finish</span>
   <span class='kw'>when</span> <span class='const'>Integer</span> <span class='kw'>then</span> <span class='const'>Renee</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Status code </span><span class='embexpr_beg'>#{</span><span class='id response'>response</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id response'>response</span><span class='rparen'>)</span><span class='period'>.</span><span class='id finish'>finish</span>
   <span class='kw'>when</span> <span class='const'>Symbol</span>  <span class='kw'>then</span> <span class='id interpret_response'>interpret_response</span><span class='lparen'>(</span><span class='const'>HTTP_CODES</span><span class='lbracket'>[</span><span class='id response'>response</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id response'>response</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'>Proc</span>    <span class='kw'>then</span> <span class='id instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id response'>response</span><span class='rparen'>)</span>
   <span class='kw'>else</span>              <span class='id interpret_response'>interpret_response</span><span class='lparen'>(</span><span class='id response'>response</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -589,20 +506,21 @@ not require the path to be consumed.</p>
   
 </ul>
 
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-103
-104
-105
-106
-107</pre>
+93
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id redirect'>redirect</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id code'>code</span> <span class='op'>=</span> <span class='int'>302</span><span class='rparen'>)</span>
   <span class='id response'>response</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id new'>new</span>
@@ -676,6 +594,7 @@ not require the path to be consumed.</p>
   
 </ul>
 
+
   <h3>See Also:</h3>
   <ul class="see">
     
@@ -689,12 +608,12 @@ not require the path to be consumed.</p>
       <pre class="lines">
 
 
-116
-117
-118</pre>
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id redirect!'>redirect!</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id code'>code</span> <span class='op'>=</span> <span class='int'>302</span><span class='rparen'>)</span>
   <span class='id halt'>halt</span> <span class='id redirect'>redirect</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id code'>code</span><span class='rparen'>)</span>
@@ -800,18 +719,19 @@ not require the path to be consumed.</p>
   
 </ul>
 
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-56
-57
-58</pre>
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id respond'>respond</span><span class='lparen'>(</span><span class='id body'>body</span><span class='op'>=</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id status'>status</span><span class='op'>=</span><span class='int'>200</span><span class='comma'>,</span> <span class='id header'>header</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
   <span class='const'>Renee</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id body'>body</span><span class='comma'>,</span> <span class='id status'>status</span><span class='comma'>,</span> <span class='id header'>header</span><span class='rparen'>)</span><span class='period'>.</span><span class='id tap'>tap</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id r'>r</span><span class='op'>|</span> <span class='id r'>r</span><span class='period'>.</span><span class='id instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id block_given?'>block_given?</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id finish'>finish</span>
@@ -910,6 +830,7 @@ not require the path to be consumed.</p>
   
 </ul>
 
+
   <h3>See Also:</h3>
   <ul class="see">
     
@@ -923,12 +844,12 @@ not require the path to be consumed.</p>
       <pre class="lines">
 
 
-68
-69
-70</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/responding.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id respond!'>respond!</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
   <span class='id halt'>halt</span> <span class='id respond'>respond</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
@@ -943,9 +864,9 @@ not require the path to be consumed.</p>
 </div>
     
     <div id="footer">
-  Generated on Fri Oct 14 18:23:57 2011 by 
+  Generated on Wed Oct 19 00:47:42 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.2 (ruby-1.9.2).
+  0.7.3 (ruby-1.9.2).
 </div>
 
   </body>

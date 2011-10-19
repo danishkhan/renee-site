@@ -84,7 +84,7 @@
   
     
       <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="Application/RackInteraction.html" title="Renee::Core::Application::RackInteraction (module)">RackInteraction</a></span>, <span class='object_link'><a href="Application/RequestContext.html" title="Renee::Core::Application::RequestContext (module)">RequestContext</a></span>, <span class='object_link'><a href="Application/Responding.html" title="Renee::Core::Application::Responding (module)">Responding</a></span>, <span class='object_link'><a href="Application/Routing.html" title="Renee::Core::Application::Routing (module)">Routing</a></span></dd>
+      <dd class="r2"><span class='object_link'><a href="Application/Chaining.html" title="Renee::Core::Application::Chaining (module)">Chaining</a></span>, <span class='object_link'><a href="Application/RackInteraction.html" title="Renee::Core::Application::RackInteraction (module)">RackInteraction</a></span>, <span class='object_link'><a href="Application/RequestContext.html" title="Renee::Core::Application::RequestContext (module)">RequestContext</a></span>, <span class='object_link'><a href="Application/Responding.html" title="Renee::Core::Application::Responding (module)">Responding</a></span>, <span class='object_link'><a href="Application/Routing.html" title="Renee::Core::Application::Routing (module)">Routing</a></span>, <span class='object_link'><a href="Application/Transform.html" title="Renee::Core::Application::Transform (module)">Transform</a></span></dd>
       
     
   
@@ -92,7 +92,7 @@
   
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/renee-core/application.rb<span class="defines">,<br />
-  lib/renee-core/application/routing.rb,<br /> lib/renee-core/application/responding.rb,<br /> lib/renee-core/application/request_context.rb,<br /> lib/renee-core/application/rack_interaction.rb</span>
+  lib/renee-core/application/routing.rb,<br /> lib/renee-core/application/chaining.rb,<br /> lib/renee-core/application/transform.rb,<br /> lib/renee-core/application/responding.rb,<br /> lib/renee-core/application/request_context.rb,<br /> lib/renee-core/application/rack_interaction.rb</span>
 </dd>
   
 </dl>
@@ -111,11 +111,12 @@ It also has methods to interpret arguments to #halt and redirection response hel
 </div>
 <div class="tags">
   
+
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
    
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Application/RackInteraction.html" title="Renee::Core::Application::RackInteraction (module)">RackInteraction</a></span>, <span class='object_link'><a href="Application/RequestContext.html" title="Renee::Core::Application::RequestContext (module)">RequestContext</a></span>, <span class='object_link'><a href="Application/Responding.html" title="Renee::Core::Application::Responding (module)">Responding</a></span>, <span class='object_link'><a href="Application/Routing.html" title="Renee::Core::Application::Routing (module)">Routing</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Application/Chaining.html" title="Renee::Core::Application::Chaining (module)">Chaining</a></span>, <span class='object_link'><a href="Application/RackInteraction.html" title="Renee::Core::Application::RackInteraction (module)">RackInteraction</a></span>, <span class='object_link'><a href="Application/RequestContext.html" title="Renee::Core::Application::RequestContext (module)">RequestContext</a></span>, <span class='object_link'><a href="Application/Responding.html" title="Renee::Core::Application::Responding (module)">Responding</a></span>, <span class='object_link'><a href="Application/Routing.html" title="Renee::Core::Application::Routing (module)">Routing</a></span>, <span class='object_link'><a href="Application/Transform.html" title="Renee::Core::Application::Transform (module)">Transform</a></span>
     
    
     
@@ -134,9 +135,17 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
   
   
+  
+  
+  
+  
   <h3 class="inherited">Constants included from <span class='object_link'><a href="Application/Responding.html" title="Renee::Core::Application::Responding (module)">Responding</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Application/Responding.html#HTTP_CODES-constant" title="Renee::Core::Application::Responding::HTTP_CODES (constant)">HTTP_CODES</a></span></p>
 
+  
+  
+  
+  
   
   
   
@@ -216,6 +225,12 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
   
   
+  
+  
+  
+  
+  
+  
   <h3 class="inherited">Attributes included from <span class='object_link'><a href="Application/RequestContext.html" title="Renee::Core::Application::RequestContext (module)">RequestContext</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Application/RequestContext.html#detected_extension-instance_method" title="Renee::Core::Application::RequestContext#detected_extension (method)">detected_extension</a></span>, <span class='object_link'><a href="Application/RequestContext.html#env-instance_method" title="Renee::Core::Application::RequestContext#env (method)">env</a></span>, <span class='object_link'><a href="Application/RequestContext.html#is_index_request-instance_method" title="Renee::Core::Application::RequestContext#is_index_request (method)">is_index_request</a></span>, <span class='object_link'><a href="Application/RequestContext.html#request-instance_method" title="Renee::Core::Application::RequestContext#request (method)">request</a></span></p>
 
@@ -263,6 +278,16 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
   
   
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Application/Transform.html" title="Renee::Core::Application::Transform (module)">Transform</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Application/Transform.html#transform-instance_method" title="Renee::Core::Application::Transform#transform (method)">#transform</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Application/RackInteraction.html" title="Renee::Core::Application::RackInteraction (module)">RackInteraction</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Application/RackInteraction.html#build-instance_method" title="Renee::Core::Application::RackInteraction#build (method)">#build</a></span>, <span class='object_link'><a href="Application/RackInteraction.html#build%21-instance_method" title="Renee::Core::Application::RackInteraction#build! (method)">#build!</a></span>, <span class='object_link'><a href="Application/RackInteraction.html#run-instance_method" title="Renee::Core::Application::RackInteraction#run (method)">#run</a></span>, <span class='object_link'><a href="Application/RackInteraction.html#run%21-instance_method" title="Renee::Core::Application::RackInteraction#run! (method)">#run!</a></span></p>
 
@@ -274,7 +299,7 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Application/Responding.html" title="Renee::Core::Application::Responding (module)">Responding</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Application/Responding.html#halt-instance_method" title="Renee::Core::Application::Responding#halt (method)">#halt</a></span>, <span class='object_link'><a href="Application/Responding.html#halt%21-instance_method" title="Renee::Core::Application::Responding#halt! (method)">#halt!</a></span>, <span class='object_link'><a href="Application/Responding.html#interpret_response-instance_method" title="Renee::Core::Application::Responding#interpret_response (method)">#interpret_response</a></span>, <span class='object_link'><a href="Application/Responding.html#redirect-instance_method" title="Renee::Core::Application::Responding#redirect (method)">#redirect</a></span>, <span class='object_link'><a href="Application/Responding.html#redirect%21-instance_method" title="Renee::Core::Application::Responding#redirect! (method)">#redirect!</a></span>, <span class='object_link'><a href="Application/Responding.html#respond-instance_method" title="Renee::Core::Application::Responding#respond (method)">#respond</a></span>, <span class='object_link'><a href="Application/Responding.html#respond%21-instance_method" title="Renee::Core::Application::Responding#respond! (method)">#respond!</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Application/Responding.html#halt-instance_method" title="Renee::Core::Application::Responding#halt (method)">#halt</a></span>, <span class='object_link'><a href="Application/Responding.html#interpret_response-instance_method" title="Renee::Core::Application::Responding#interpret_response (method)">#interpret_response</a></span>, <span class='object_link'><a href="Application/Responding.html#redirect-instance_method" title="Renee::Core::Application::Responding#redirect (method)">#redirect</a></span>, <span class='object_link'><a href="Application/Responding.html#redirect%21-instance_method" title="Renee::Core::Application::Responding#redirect! (method)">#redirect!</a></span>, <span class='object_link'><a href="Application/Responding.html#respond-instance_method" title="Renee::Core::Application::Responding#respond (method)">#respond</a></span>, <span class='object_link'><a href="Application/Responding.html#respond%21-instance_method" title="Renee::Core::Application::Responding#respond! (method)">#respond!</a></span></p>
 
   
   
@@ -284,8 +309,13 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Application/Routing.html" title="Renee::Core::Application::Routing (module)">Routing</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Application/Routing.html#complete-instance_method" title="Renee::Core::Application::Routing#complete (method)">#complete</a></span>, <span class='object_link'><a href="Application/Routing.html#delete-instance_method" title="Renee::Core::Application::Routing#delete (method)">#delete</a></span>, <span class='object_link'><a href="Application/Routing.html#exact_path-instance_method" title="Renee::Core::Application::Routing#exact_path (method)">#exact_path</a></span>, <span class='object_link'><a href="Application/Routing.html#extension-instance_method" title="Renee::Core::Application::Routing#extension (method)">#extension</a></span>, <span class='object_link'><a href="Application/Routing.html#get-instance_method" title="Renee::Core::Application::Routing#get (method)">#get</a></span>, <span class='object_link'><a href="Application/Routing.html#no_extension-instance_method" title="Renee::Core::Application::Routing#no_extension (method)">#no_extension</a></span>, <span class='object_link'><a href="Application/Routing.html#part-instance_method" title="Renee::Core::Application::Routing#part (method)">#part</a></span>, <span class='object_link'><a href="Application/Routing.html#partial_variable-instance_method" title="Renee::Core::Application::Routing#partial_variable (method)">#partial_variable</a></span>, <span class='object_link'><a href="Application/Routing.html#path-instance_method" title="Renee::Core::Application::Routing#path (method)">#path</a></span>, <span class='object_link'><a href="Application/Routing.html#post-instance_method" title="Renee::Core::Application::Routing#post (method)">#post</a></span>, <span class='object_link'><a href="Application/Routing.html#put-instance_method" title="Renee::Core::Application::Routing#put (method)">#put</a></span>, <span class='object_link'><a href="Application/Routing.html#query-instance_method" title="Renee::Core::Application::Routing#query (method)">#query</a></span>, <span class='object_link'><a href="Application/Routing.html#query_string-instance_method" title="Renee::Core::Application::Routing#query_string (method)">#query_string</a></span>, <span class='object_link'><a href="Application/Routing.html#remainder-instance_method" title="Renee::Core::Application::Routing#remainder (method)">#remainder</a></span>, <span class='object_link'><a href="Application/Routing.html#variable-instance_method" title="Renee::Core::Application::Routing#variable (method)">#variable</a></span>, <span class='object_link'><a href="Application/Routing.html#whole_path-instance_method" title="Renee::Core::Application::Routing#whole_path (method)">#whole_path</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Application/Routing.html#complete-instance_method" title="Renee::Core::Application::Routing#complete (method)">#complete</a></span>, <span class='object_link'><a href="Application/Routing.html#delete-instance_method" title="Renee::Core::Application::Routing#delete (method)">#delete</a></span>, <span class='object_link'><a href="Application/Routing.html#exact_path-instance_method" title="Renee::Core::Application::Routing#exact_path (method)">#exact_path</a></span>, <span class='object_link'><a href="Application/Routing.html#extension-instance_method" title="Renee::Core::Application::Routing#extension (method)">#extension</a></span>, <span class='object_link'><a href="Application/Routing.html#get-instance_method" title="Renee::Core::Application::Routing#get (method)">#get</a></span>, <span class='object_link'><a href="Application/Routing.html#multi_variable-instance_method" title="Renee::Core::Application::Routing#multi_variable (method)">#multi_variable</a></span>, <span class='object_link'><a href="Application/Routing.html#no_extension-instance_method" title="Renee::Core::Application::Routing#no_extension (method)">#no_extension</a></span>, <span class='object_link'><a href="Application/Routing.html#part-instance_method" title="Renee::Core::Application::Routing#part (method)">#part</a></span>, <span class='object_link'><a href="Application/Routing.html#partial_variable-instance_method" title="Renee::Core::Application::Routing#partial_variable (method)">#partial_variable</a></span>, <span class='object_link'><a href="Application/Routing.html#path-instance_method" title="Renee::Core::Application::Routing#path (method)">#path</a></span>, <span class='object_link'><a href="Application/Routing.html#post-instance_method" title="Renee::Core::Application::Routing#post (method)">#post</a></span>, <span class='object_link'><a href="Application/Routing.html#put-instance_method" title="Renee::Core::Application::Routing#put (method)">#put</a></span>, <span class='object_link'><a href="Application/Routing.html#query-instance_method" title="Renee::Core::Application::Routing#query (method)">#query</a></span>, <span class='object_link'><a href="Application/Routing.html#query_string-instance_method" title="Renee::Core::Application::Routing#query_string (method)">#query_string</a></span>, <span class='object_link'><a href="Application/Routing.html#remainder-instance_method" title="Renee::Core::Application::Routing#remainder (method)">#remainder</a></span>, <span class='object_link'><a href="Application/Routing.html#repeating_variable-instance_method" title="Renee::Core::Application::Routing#repeating_variable (method)">#repeating_variable</a></span>, <span class='object_link'><a href="Application/Routing.html#variable-instance_method" title="Renee::Core::Application::Routing#variable (method)">#variable</a></span>, <span class='object_link'><a href="Application/Routing.html#whole_path-instance_method" title="Renee::Core::Application::Routing#whole_path (method)">#whole_path</a></span></p>
 
+  
+  
+  
+  
+  
   
   
   
@@ -333,19 +363,20 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
 </ul>
 
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-22
-23
-24
-25</pre>
+26
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id settings'>settings</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id application_block'>application_block</span><span class='rparen'>)</span>
   <span class='ivar'>@settings</span> <span class='op'>=</span> <span class='id settings'>settings</span>
@@ -380,18 +411,19 @@ It also has methods to interpret arguments to #halt and redirection response hel
 </div>
 <div class="tags">
   
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-19
-20
-21</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id application_block'>application_block</span>
   <span class='ivar'>@application_block</span>
@@ -420,18 +452,19 @@ It also has methods to interpret arguments to #halt and redirection response hel
 </div>
 <div class="tags">
   
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-19
-20
-21</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id settings'>settings</span>
   <span class='ivar'>@settings</span>
@@ -447,9 +480,9 @@ It also has methods to interpret arguments to #halt and redirection response hel
 </div>
     
     <div id="footer">
-  Generated on Fri Oct 14 18:23:56 2011 by 
+  Generated on Wed Oct 19 00:47:42 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.2 (ruby-1.9.2).
+  0.7.3 (ruby-1.9.2).
 </div>
 
   </body>

@@ -111,6 +111,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
     
   </div>
 
+
 </div>
 
   <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
@@ -136,6 +137,31 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
 
   
     <span class="summary_desc"><div class='inline'><p>Returns the value of attribute includes.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#variable_types-instance_method" title="#variable_types (instance method)">- (Object) <strong>variable_types</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute variable_types.</p>
 </div></span>
   
 </li>
@@ -203,6 +229,28 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#register_variable_type-instance_method" title="#register_variable_type (instance method)">- (Object) <strong>register_variable_type</strong>(name, matcher) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#views_path-instance_method" title="#views_path (instance method)">- (Object) <strong>views_path</strong>(path = nil) </a>
     
 
@@ -244,6 +292,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
 </div>
 <div class="tags">
   
+
 </div><table class="source_code">
   <tr>
     <td>
@@ -252,13 +301,19 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
 
 12
 13
-14</pre>
+14
+15
+16
+17</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span>
   <span class='ivar'>@includes</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@variable_types</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id register_variable_type'>register_variable_type</span> <span class='symbol'>:integer</span><span class='comma'>,</span> <span class='const'>IntegerMatcher</span>
+  <span class='id register_variable_type'>register_variable_type</span> <span class='symbol'>:int</span><span class='comma'>,</span> <span class='symbol'>:integer</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -289,6 +344,7 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
 </div>
 <div class="tags">
   
+
 </div><table class="source_code">
   <tr>
     <td>
@@ -304,6 +360,47 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
 
 <span class='kw'>def</span> <span class='id includes'>includes</span>
   <span class='ivar'>@includes</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="variable_types-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="variable_types-instance_method">
+  
+    - (<tt>Object</tt>) <strong>variable_types</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute variable_types</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id variable_types'>variable_types</span>
+  <span class='ivar'>@variable_types</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -330,15 +427,57 @@ Powers the Renee setup block which is instance eval'ed into this object.</p>
       <pre class="lines">
 
 
-29
-30
-31</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id include'>include</span><span class='lparen'>(</span><span class='id mod'>mod</span><span class='rparen'>)</span>
   <span class='id includes'>includes</span> <span class='op'>&lt;&lt;</span> <span class='id mod'>mod</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="register_variable_type-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_variable_type</strong>(name, matcher) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id register_variable_type'>register_variable_type</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id matcher'>matcher</span><span class='rparen'>)</span>
+  <span class='id matcher'>matcher</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id matcher'>matcher</span>
+  <span class='kw'>when</span> <span class='const'>Matcher</span> <span class='kw'>then</span> <span class='id matcher'>matcher</span>
+  <span class='kw'>when</span> <span class='const'>Array</span>   <span class='kw'>then</span> <span class='const'>Matcher</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id matcher'>matcher</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id m'>m</span><span class='op'>|</span> <span class='ivar'>@variable_types</span><span class='lbracket'>[</span><span class='id m'>m</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'>Symbol</span>  <span class='kw'>then</span> <span class='ivar'>@variable_types</span><span class='lbracket'>[</span><span class='id matcher'>matcher</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>              <span class='const'>Matcher</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id matcher'>matcher</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id matcher'>matcher</span><span class='period'>.</span><span class='id name'>name</span> <span class='op'>=</span> <span class='id name'>name</span>
+  <span class='ivar'>@variable_types</span><span class='lbracket'>[</span><span class='id name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id matcher'>matcher</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -392,18 +531,19 @@ views_path =&gt; &quot;./views&quot;</pre>
   
 </ul>
 
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/settings.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id views_path'>views_path</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>?</span> <span class='ivar'>@views_path</span> <span class='op'>=</span> <span class='id path'>path</span> <span class='op'>:</span> <span class='ivar'>@views_path</span>
@@ -418,9 +558,9 @@ views_path =&gt; &quot;./views&quot;</pre>
 </div>
     
     <div id="footer">
-  Generated on Fri Oct 14 18:23:56 2011 by 
+  Generated on Wed Oct 19 00:47:42 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.2 (ruby-1.9.2).
+  0.7.3 (ruby-1.9.2).
 </div>
 
   </body>
