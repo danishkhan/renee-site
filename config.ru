@@ -13,7 +13,7 @@ use Rack::GoogleAnalytics, :tracker => 'UA-26317661-1'
 run Renee {
   path('concept') { redirect! '/' }
   views.each { |view|
-    whole_path("/#{view == 'index' ? '' : view}") {
+    whole_path("/#{view == 'index' ? '' : view}").get {
       title = (view == 'index') ? '' : " &mdash; #{view.split('-').join(' ')}"
       render! :"#{view}", :layout => :"layouts/app", :locals => {:title_part => title }
     }

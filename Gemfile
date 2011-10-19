@@ -1,7 +1,6 @@
 source :rubygems
 
-
-gem 'renee'
+gem 'renee', '~> 0.1.0'
 gem 'rdiscount'
 gem 'haml'
 gem 'rack-codehighlighter'
