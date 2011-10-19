@@ -134,7 +134,7 @@ and even explicitly cast your variable types:
 
     :::ruby
     path('blog') {
-      var :type => Integer do |id|
+      var :integer do |id|
         get { halt "path is /blog/#{id} and id is an integer" }
       end
     end

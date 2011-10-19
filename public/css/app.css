@@ -66,6 +66,10 @@ pre.CodeRay .comment {
   color: #BC9358;
 }
 
+pre.CodeRay .regexp {
+  color: #a33;
+}
+
 div.logo {
   text-align: center;
 }

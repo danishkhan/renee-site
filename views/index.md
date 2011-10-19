@@ -24,7 +24,7 @@ To model this same idea in Renee, you could do the following:
     :::ruby
     run Renee do
       path 'posts' do
-        var Integer do |id|
+        var :int do |id|
           post = Posts.find(id)
           path 'comments' do
             get { render! "comments", :comments => post.comments }
@@ -46,7 +46,7 @@ Renee lives and breathes inside of [Rack](http://rack.rubyforge.org/). Let's tak
       p request.path_info     # printing
       path "posts" do
         p request.path_info   # printing
-        var Integer do |id|
+        var :int do |id|
           p request.path_info # printing
           halt :ok
         end
@@ -60,7 +60,7 @@ If you run a request with the path `/posts/12` through here, you'll get three pr
     "/123"
     ""
 
-The PATH_INFO is being consumed by each scope. If you don't halt, don't worry, your request will get put back together again after it falls out of each block. This let's you move part of your application around without fearing how the route is being consumed.
+The PATH_INFO is being consumed by each scope. If you don't halt, don't worry, your request will get put back together again after it falls out of each block. This let's you move parts of your application around without fearing how the route is being consumed.
 
 ### Rack integration
 
@@ -74,6 +74,43 @@ Renee loves Rack. To run a arbitrary rack end point, you can use `#run!` to stop
     end
 
 To find out more about integrating with rack, take a look at [rack integration](/rack-integration) to find out more!
+
+### Type validation
+
+Converting your variable and returning 400's or 404's can get tedious, so why not do it all in one place? Renee allows you to register
+arbitrary variable types, transform them, and handle error cases in one, easy place. Here is an example!
+
+    :::ruby
+    run Renee {
+      path "color" do
+        var :hex do |color|
+          get { halt "<body bgcolor='##{color.to_s(16)}'></body>" }
+        end
+      end
+    }.setup {
+      register_variable_type(:hex, /[0-9a-f]{6}/).
+        on_transform { |v| v.to_i(16) }.
+        raise_on_error!
+    }
+
+Now, let's throw some requests against this. If we go to `http://127.0.0.1:9393/color/ff99ff`, we'll get a nice fuchsia. Try `http://127.0.0.1:9393/color/blue` and you'll get a 400. Too bad.
+
+To find out more about [variable types](/variable-types), read all about them!
+
+### Chaining
+
+Okay, so, writing blocks is fun, but, it can get a bit indent-y when we don't really need it to be. Feel free to chain together whatever methods you'd like. For instance the above example could have been written:
+
+    :::ruby
+    run Renee {
+      path("color").var(:hex).get { |color| halt "<body bgcolor='##{color.to_s(16)}'></body>" }
+    }.setup {
+      register_variable_type(:hex, /[0-9a-f]{6}/).
+        on_transform { |v| v.to_i(16) }.
+        raise_on_error!
+    }
+
+You can easily consume chaining yourself, if you want to implement your own routing methods. Find out [more](/chaining)!
 
 ## Getting started
 

@@ -3,13 +3,12 @@
 ## A note about bang methods
 
 Any method that ends with ! (a bang method) will do whatever the non-bang version of that method will do,
-but in addition, it will halt with that response. (With the notable exception of `#halt!` itself.)
+but in addition, it will halt with that response.
 
-## `#halt` (and `#halt!`)
+## `#halt`
 
 Halt will immediately stop processing and respond with the value passed to it. It will respond
-in different ways depending on what was passed to it. Halt! will behave like halt, but it doesn't
-require the path to be entirely consumed before sending a response.
+in different ways depending on what was passed to it.
 
 ### `Symbol`
 
