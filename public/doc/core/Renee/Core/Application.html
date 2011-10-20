@@ -318,11 +318,6 @@ It also has methods to interpret arguments to #halt and redirection response hel
   
   
   
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="Application/Chaining.html" title="Renee::Core::Application::Chaining (module)">Chaining</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Application/Chaining.html#chain-instance_method" title="Renee::Core::Application::Chaining#chain (method)">#chain</a></span></p>
-
-  
-  
   
   
   
@@ -383,10 +378,11 @@ It also has methods to interpret arguments to #halt and redirection response hel
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 26</span>
 
-<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id settings'>settings</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id application_block'>application_block</span><span class='rparen'>)</span>
-  <span class='ivar'>@settings</span> <span class='op'>=</span> <span class='id settings'>settings</span>
-  <span class='ivar'>@application_block</span> <span class='op'>=</span> <span class='id application_block'>application_block</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='settings identifier id'>settings</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='application_block identifier id'>application_block</span><span class='rparen token'>)</span>
+  <span class='@settings ivar id'>@settings</span> <span class='assign token'>=</span> <span class='settings identifier id'>settings</span>
+  <span class='@application_block ivar id'>@application_block</span> <span class='assign token'>=</span> <span class='application_block identifier id'>application_block</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -430,9 +426,10 @@ It also has methods to interpret arguments to #halt and redirection response hel
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 23</span>
 
-<span class='kw'>def</span> <span class='id application_block'>application_block</span>
-  <span class='ivar'>@application_block</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='application_block identifier id'>application_block</span>
+  <span class='@application_block ivar id'>@application_block</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -471,9 +468,10 @@ It also has methods to interpret arguments to #halt and redirection response hel
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application.rb', line 23</span>
 
-<span class='kw'>def</span> <span class='id settings'>settings</span>
-  <span class='ivar'>@settings</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='settings identifier id'>settings</span>
+  <span class='@settings ivar id'>@settings</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -485,9 +483,9 @@ It also has methods to interpret arguments to #halt and redirection response hel
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 01:56:54 2011 by 
+  Generated on Wed Oct 19 19:43:41 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.3 (ruby-1.9.2).
+  0.7.3 (ruby-1.8.7).
 </div>
 
   </body>

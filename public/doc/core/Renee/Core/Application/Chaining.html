@@ -96,12 +96,13 @@ mark methods you want to be available with <code>chain_method :method_name</code
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code">module MoreRoutingMethods
-  include Chaining
-  def other_routing_method
-    # ..
-  end
-  chain_method :other_routing_method</pre>
+      <pre class="example code"><span class='module module kw'>module</span> <span class='MoreRoutingMethods constant id'>MoreRoutingMethods</span>
+  <span class='include identifier id'>include</span> <span class='Chaining constant id'>Chaining</span>
+  <span class='def def kw'>def</span> <span class='other_routing_method identifier id'>other_routing_method</span>
+    <span class='comment val'># ..</span>
+  <span class='end end kw'>end</span>
+  <span class='chain_method identifier id'>chain_method</span> <span class='symbol val'>:other_routing_method</span>
+</pre>
     
   </div>
 
@@ -111,81 +112,14 @@ mark methods you want to be available with <code>chain_method :method_name</code
 
 
 
-  
-    <h2>
-      Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
 
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#chain-instance_method" title="#chain (instance method)">- (Object) <strong>chain</strong>(blk, &amp;proxy) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
-
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-    
-    
-      <div class="method_details first">
-  <p class="signature first" id="chain-instance_method">
-  
-    - (<tt>Object</tt>) <strong>chain</strong>(blk, &amp;proxy) 
-  
-
-  
-</p><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-62
-63
-64</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee-core/application/chaining.rb', line 62</span>
-
-<span class='kw'>def</span> <span class='id chain'>chain</span><span class='lparen'>(</span><span class='id blk'>blk</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id proxy'>proxy</span><span class='rparen'>)</span>
-  <span class='id blk'>blk</span> <span class='op'>?</span> <span class='kw'>yield</span><span class='lparen'>(</span><span class='id blk'>blk</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'>ChainingProxy</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 01:56:55 2011 by 
+  Generated on Wed Oct 19 19:43:45 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.3 (ruby-1.9.2).
+  0.7.3 (ruby-1.8.7).
 </div>
 
   </body>

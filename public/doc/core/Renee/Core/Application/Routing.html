@@ -289,7 +289,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Like #path, doesn't look for leading slashes.</p>
+    <span class="summary_desc"><div class='inline'><p>Like #path, but doesn't look for leading slashes.</p>
 </div></span>
   
 </li>
@@ -532,11 +532,6 @@
   
   
   
-  
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="Chaining.html" title="Renee::Core::Application::Chaining (module)">Chaining</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Chaining.html#chain-instance_method" title="Renee::Core::Application::Chaining#chain (method)">#chain</a></span></p>
-
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -563,7 +558,8 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id complete'>complete</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='complete identifier id'>complete</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='string val'>&quot;hello world&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -583,11 +579,12 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 202</span>
 
-<span class='kw'>def</span> <span class='id complete'>complete</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span> <span class='op'>||</span> <span class='id is_index_request'>is_index_request</span>
-    <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span> <span class='rbrace'>}</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='complete identifier id'>complete</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='string val'>''</span> <span class='orop op'>||</span> <span class='is_index_request identifier id'>is_index_request</span>
+    <span class='with_path_part identifier id'>with_path_part</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span> <span class='rbrace token'>}</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -614,7 +611,8 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id delete'>delete</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='delete identifier id'>delete</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='string val'>&quot;hello world&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -632,9 +630,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 191</span>
 
-<span class='kw'>def</span> <span class='id delete'>delete</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DELETE</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='delete identifier id'>delete</span><span class='lparen token'>(</span><span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='request_method identifier id'>request_method</span><span class='lparen token'>(</span><span class='string val'>'DELETE'</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -678,10 +677,11 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 40</span>
 
-<span class='kw'>def</span> <span class='id exact_path'>exact_path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id p'>p</span> <span class='op'>=</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='id part'>part</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='CHAR'>?/</span>
-  <span class='id part'>part</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='exact_path identifier id'>exact_path</span><span class='lparen token'>(</span><span class='p identifier id'>p</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='p identifier id'>p</span> <span class='assign token'>=</span> <span class='p identifier id'>p</span><span class='lbrack token'>[</span><span class='integer val'>1</span><span class='comma token'>,</span> <span class='part identifier id'>part</span><span class='dot token'>.</span><span class='size identifier id'>size</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='p identifier id'>p</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='integer val'>?/</span>
+  <span class='part identifier id'>part</span><span class='lparen token'>(</span><span class='dregexp node'>/^\/#{Regexp.quote(p)}/</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -712,7 +712,8 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id extension'>extension</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>html</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id path'>path</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id path'>path</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='extension identifier id'>extension</span><span class='lparen token'>(</span><span class='string val'>'html'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='path identifier id'>path</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -735,14 +736,15 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 118</span>
 
-<span class='kw'>def</span> <span class='id extension'>extension</span><span class='lparen'>(</span><span class='id ext'>ext</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id detected_extension'>detected_extension</span> <span class='op'>&amp;&amp;</span> <span class='id match'>match</span> <span class='op'>=</span> <span class='id detected_extension'>detected_extension</span><span class='lbracket'>[</span><span class='id ext'>ext</span><span class='rbracket'>]</span>
-    <span class='kw'>if</span> <span class='id match'>match</span> <span class='op'>==</span> <span class='id detected_extension'>detected_extension</span>
-      <span class='lparen'>(</span><span class='id ext_match'>ext_match</span> <span class='op'>=</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/?\.</span><span class='embexpr_beg'>#{</span><span class='id match'>match</span><span class='rbrace'>}</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>?</span>
-        <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id ext_match'>ext_match</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span>
-    <span class='kw'>end</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='extension identifier id'>extension</span><span class='lparen token'>(</span><span class='ext identifier id'>ext</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='detected_extension identifier id'>detected_extension</span> <span class='andop op'>&amp;&amp;</span> <span class='match identifier id'>match</span> <span class='assign token'>=</span> <span class='detected_extension identifier id'>detected_extension</span><span class='lbrack token'>[</span><span class='ext identifier id'>ext</span><span class='rbrack token'>]</span>
+    <span class='if if kw'>if</span> <span class='match identifier id'>match</span> <span class='eq op'>==</span> <span class='detected_extension identifier id'>detected_extension</span>
+      <span class='lparen token'>(</span><span class='ext_match identifier id'>ext_match</span> <span class='assign token'>=</span> <span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='dregexp node'>/\/?\.#{match}/</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='question op'>?</span>
+        <span class='with_path_part identifier id'>with_path_part</span><span class='lparen token'>(</span><span class='ext_match identifier id'>ext_match</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -769,7 +771,8 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id get'>get</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='get identifier id'>get</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='string val'>&quot;hello world&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -787,9 +790,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 158</span>
 
-<span class='kw'>def</span> <span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>GET</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='get identifier id'>get</span><span class='lparen token'>(</span><span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='request_method identifier id'>request_method</span><span class='lparen token'>(</span><span class='string val'>'GET'</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -865,9 +869,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 88</span>
 
-<span class='kw'>def</span> <span class='id multi_variable'>multi_variable</span><span class='lparen'>(</span><span class='id count'>count</span><span class='comma'>,</span> <span class='id type'>type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='id type'>type</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id count'>count</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='multi_variable identifier id'>multi_variable</span><span class='lparen token'>(</span><span class='count identifier id'>count</span><span class='comma token'>,</span> <span class='type identifier id'>type</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='complex_variable identifier id'>complex_variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='string val'>'/'</span><span class='comma token'>,</span> <span class='count identifier id'>count</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -894,7 +899,8 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id no_extension'>no_extension</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id path'>path</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id path'>path</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='no_extension identifier id'>no_extension</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='path identifier id'>path</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -912,9 +918,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 135</span>
 
-<span class='kw'>def</span> <span class='id no_extension'>no_extension</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span> <span class='kw'>if</span> <span class='id detected_extension'>detected_extension</span><span class='period'>.</span><span class='id nil?'>nil?</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='no_extension identifier id'>no_extension</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span> <span class='if if_mod kw'>if</span> <span class='detected_extension identifier id'>detected_extension</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -929,7 +936,7 @@
   
 </p><div class="docstring">
   <div class="discussion">
-    <p>Like #path, doesn't look for leading slashes.</p>
+    <p>Like #path, but doesn't look for leading slashes.</p>
 
 
   </div>
@@ -953,12 +960,13 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 47</span>
 
-<span class='kw'>def</span> <span class='id part'>part</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id p'>p</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/?</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='regexp_end'>/</span></span> <span class='kw'>if</span> <span class='id p'>p</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id match'>match</span> <span class='op'>=</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id p'>p</span><span class='rbracket'>]</span>
-    <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id match'>match</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span> <span class='rbrace'>}</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='part identifier id'>part</span><span class='lparen token'>(</span><span class='p identifier id'>p</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='p identifier id'>p</span> <span class='assign token'>=</span> <span class='dregexp node'>/\/?#{Regexp.quote(p)}/</span> <span class='if if_mod kw'>if</span> <span class='p identifier id'>p</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='String constant id'>String</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='match identifier id'>match</span> <span class='assign token'>=</span> <span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='p identifier id'>p</span><span class='rbrack token'>]</span>
+    <span class='with_path_part identifier id'>with_path_part</span><span class='lparen token'>(</span><span class='match identifier id'>match</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span> <span class='rbrace token'>}</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1005,9 +1013,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 106</span>
 
-<span class='kw'>def</span> <span class='id partial_variable'>partial_variable</span><span class='lparen'>(</span><span class='id type'>type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='id type'>type</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='partial_variable identifier id'>partial_variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='complex_variable identifier id'>complex_variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='integer val'>1</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1034,12 +1043,13 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code">path('/')    { ... } #=&gt; '/'
-path('test') { ... } #=&gt; '/test'
+      <pre class="example code"><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'/'</span><span class='rparen token'>)</span>    <span class='lbrace token'>{</span> <span class='dot3 op'>...</span> <span class='rbrace token'>}</span> <span class='comment val'>#=&gt; '/'</span>
+<span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'test'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='dot3 op'>...</span> <span class='rbrace token'>}</span> <span class='comment val'>#=&gt; '/test'</span>
 
-path 'foo' do
-  path('bar') { ... } #=&gt; '/foo/bar'
-end</pre>
+<span class='path identifier id'>path</span> <span class='string val'>'foo'</span> <span class='do do kw'>do</span>
+  <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'bar'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='dot3 op'>...</span> <span class='rbrace token'>}</span> <span class='comment val'>#=&gt; '/foo/bar'</span>
+<span class='end end kw'>end</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -1093,11 +1103,12 @@ end</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 24</span>
 
-<span class='kw'>def</span> <span class='id path'>path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id p'>p</span> <span class='op'>=</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='id p'>p</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='CHAR'>?/</span>
-  <span class='id extension_part'>extension_part</span> <span class='op'>=</span> <span class='id detected_extension'>detected_extension</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>|\\.</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id detected_extension'>detected_extension</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id part'>part</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>(\/?|$)(?=\/|$</span><span class='embexpr_beg'>#{</span><span class='id extension_part'>extension_part</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='p identifier id'>p</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='p identifier id'>p</span> <span class='assign token'>=</span> <span class='p identifier id'>p</span><span class='lbrack token'>[</span><span class='integer val'>1</span><span class='comma token'>,</span> <span class='p identifier id'>p</span><span class='dot token'>.</span><span class='size identifier id'>size</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='p identifier id'>p</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='integer val'>?/</span>
+  <span class='extension_part identifier id'>extension_part</span> <span class='assign token'>=</span> <span class='detected_extension identifier id'>detected_extension</span> <span class='integer val'>? </span><span class='dstring node'>&quot;|\\.#{Regexp.quote(detected_extension)}&quot;</span> <span class='colon op'>:</span> <span class='string val'>&quot;&quot;</span>
+  <span class='part identifier id'>part</span><span class='lparen token'>(</span><span class='dregexp node'>/^\/#{Regexp.quote(p)}(\/?|$)(?=\/|$#{extension_part})/</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1124,7 +1135,8 @@ end</pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id post'>post</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='post identifier id'>post</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='string val'>&quot;hello world&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -1142,9 +1154,10 @@ end</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 169</span>
 
-<span class='kw'>def</span> <span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POST</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='post identifier id'>post</span><span class='lparen token'>(</span><span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='request_method identifier id'>request_method</span><span class='lparen token'>(</span><span class='string val'>'POST'</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1171,7 +1184,8 @@ end</pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id put'>put</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='put identifier id'>put</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='string val'>&quot;hello world&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -1189,9 +1203,10 @@ end</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 180</span>
 
-<span class='kw'>def</span> <span class='id put'>put</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PUT</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='put identifier id'>put</span><span class='lparen token'>(</span><span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='request_method identifier id'>request_method</span><span class='lparen token'>(</span><span class='string val'>'PUT'</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1218,11 +1233,13 @@ end</pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id query'>query</span><span class='lparen'>(</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:integer</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id h'>h</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world </span><span class='embexpr_beg'>#{</span><span class='id h'>h</span><span class='lbracket'>[</span><span class='symbol'>:key</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='query identifier id'>query</span><span class='lparen token'>(</span><span class='symbol val'>:key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:integer</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='h identifier id'>h</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='dstring node'>&quot;hello world #{h[:key]}&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id query'>query</span><span class='lparen'>(</span><span class='symbol'>:key</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id val'>val</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key is </span><span class='embexpr_beg'>#{</span><span class='id val'>val</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='query identifier id'>query</span><span class='lparen token'>(</span><span class='symbol val'>:key</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='val identifier id'>val</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='dstring node'>&quot;key is #{val}&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -1265,13 +1282,14 @@ If given a hash, then every value must be able to be matched by a registered typ
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 223</span>
 
-<span class='kw'>def</span> <span class='id query'>query</span><span class='lparen'>(</span><span class='id q'>q</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='kw'>case</span> <span class='id q'>q</span>
-  <span class='kw'>when</span> <span class='const'>Hash</span>  <span class='kw'>then</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='lbracket'>[</span><span class='id q'>q</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='lparen'>(</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id v'>v</span><span class='rparen'>)</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id transform'>transform</span><span class='lparen'>(</span><span class='id v'>v</span><span class='comma'>,</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='id k'>k</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='kw'>return</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='const'>Array</span> <span class='kw'>then</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='op'>*</span><span class='id q'>q</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id qk'>qk</span><span class='op'>|</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='id qk'>qk</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span> <span class='kw'>or</span> <span class='kw'>return</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>            <span class='id query'>query</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id q'>q</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='query identifier id'>query</span><span class='lparen token'>(</span><span class='q identifier id'>q</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='case case kw'>case</span> <span class='q identifier id'>q</span>
+  <span class='when when kw'>when</span> <span class='Hash constant id'>Hash</span>  <span class='then then kw'>then</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span><span class='q identifier id'>q</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='lparen token'>(</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='rparen token'>)</span><span class='bitor op'>|</span> <span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='transform identifier id'>transform</span><span class='lparen token'>(</span><span class='v identifier id'>v</span><span class='comma token'>,</span> <span class='request identifier id'>request</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='return return kw'>return</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
+  <span class='when when kw'>when</span> <span class='Array constant id'>Array</span> <span class='then then kw'>then</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='q identifier id'>q</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='qk identifier id'>qk</span><span class='bitor op'>|</span> <span class='request identifier id'>request</span><span class='lbrack token'>[</span><span class='qk identifier id'>qk</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rbrack token'>]</span> <span class='or or kw'>or</span> <span class='return return kw'>return</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>            <span class='query identifier id'>query</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='q identifier id'>q</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1298,12 +1316,13 @@ If given a hash, then every value must be able to be matched by a registered typ
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id path'>path</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>test</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
-  <span class='id query_string'>query_string</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>foo=bar</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
-    <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>matched</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>test?foo=bar #=&gt; 'matched'</span></span></pre>
+      <pre class="example code"><span class='path identifier id'>path</span> <span class='string val'>'test'</span> <span class='do do kw'>do</span>
+  <span class='query_string identifier id'>query_string</span> <span class='string val'>'foo=bar'</span> <span class='do do kw'>do</span>
+    <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='string val'>'matched'</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+<span class='GET constant id'>GET</span> <span class='regexp val'>/test?foo=bar #=&gt; 'matched'
+</span></pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -1340,9 +1359,10 @@ If given a hash, then every value must be able to be matched by a registered typ
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 246</span>
 
-<span class='kw'>def</span> <span class='id query_string'>query_string</span><span class='lparen'>(</span><span class='id qs'>qs</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span> <span class='kw'>if</span> <span class='id qs'>qs</span> <span class='op'>===</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>QUERY_STRING</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='query_string identifier id'>query_string</span><span class='lparen token'>(</span><span class='qs identifier id'>qs</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span> <span class='if if_mod kw'>if</span> <span class='qs identifier id'>qs</span> <span class='eqq op'>===</span> <span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'QUERY_STRING'</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1373,7 +1393,8 @@ If given a hash, then every value must be able to be matched by a registered typ
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id remainder'>remainder</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id path'>path</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id path'>path</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='remainder identifier id'>remainder</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='path identifier id'>path</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -1391,9 +1412,10 @@ If given a hash, then every value must be able to be matched by a registered typ
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 146</span>
 
-<span class='kw'>def</span> <span class='id remainder'>remainder</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id var'>var</span><span class='op'>|</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id var'>var</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='remainder identifier id'>remainder</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='with_path_part identifier id'>with_path_part</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='var identifier id'>var</span><span class='bitor op'>|</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='var identifier id'>var</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1454,9 +1476,10 @@ If given a hash, then every value must be able to be matched by a registered typ
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 97</span>
 
-<span class='kw'>def</span> <span class='id repeating_variable'>repeating_variable</span><span class='lparen'>(</span><span class='id type'>type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='id type'>type</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='repeating_variable identifier id'>repeating_variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='complex_variable identifier id'>complex_variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='string val'>'/'</span><span class='comma token'>,</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1490,24 +1513,27 @@ simply a String.
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id path'>path</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
-  <span class='id variable'>variable</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id id'>id</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id id'>id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>hey  #=&gt; [200, {}, 'hey']</span></span></pre>
+      <pre class="example code"><span class='path identifier id'>path</span> <span class='string val'>'/'</span> <span class='do do kw'>do</span>
+  <span class='variable identifier id'>variable</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='id identifier id'>id</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='id identifier id'>id</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+<span class='GET constant id'>GET</span> <span class='regexp val'>/hey  #=&gt; [200, {}, 'hey']
+</span></pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id path'>path</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
-  <span class='id variable'>variable</span><span class='lparen'>(</span><span class='symbol'>:integer</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id id'>id</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a numeric id: </span><span class='embexpr_beg'>#{</span><span class='id id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>123  #=&gt; [200, {}, 'This is a numeric id: 123']</span></span></pre>
+      <pre class="example code"><span class='path identifier id'>path</span> <span class='string val'>'/'</span> <span class='do do kw'>do</span>
+  <span class='variable identifier id'>variable</span><span class='lparen token'>(</span><span class='symbol val'>:integer</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='id identifier id'>id</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='dstring node'>&quot;This is a numeric id: #{id}&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+<span class='GET constant id'>GET</span> <span class='regexp val'>/123  #=&gt; [200, {}, 'This is a numeric id: 123']
+</span></pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id path'>path</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/test</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
-  <span class='id variable'>variable</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id foo'>foo</span><span class='comma'>,</span> <span class='id bar'>bar</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id foo'>foo</span><span class='rbrace'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id bar'>bar</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-<span class='kw'>end</span>
-<span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>test</span><span class='regexp_end'>/hey</span></span><span class='op'>/</span><span class='id there'>there</span>  <span class='comment'>#=&gt; [200, {}, 'hey-there']</span></pre>
+      <pre class="example code"><span class='path identifier id'>path</span> <span class='string val'>'/test'</span> <span class='do do kw'>do</span>
+  <span class='variable identifier id'>variable</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='foo identifier id'>foo</span><span class='comma token'>,</span> <span class='bar identifier id'>bar</span><span class='bitor op'>|</span> <span class='halt identifier id'>halt</span> <span class='lbrack token'>[</span><span class='integer val'>200</span><span class='comma token'>,</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='dstring node'>&quot;#{foo}-#{bar}&quot;</span><span class='rbrack token'>]</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+<span class='GET constant id'>GET</span> <span class='regexp val'>/test/</span><span class='hey identifier id'>hey</span><span class='div op'>/</span><span class='there identifier id'>there</span>  <span class='comment val'>#=&gt; [200, {}, 'hey-there']</span>
+</pre>
     
   </div>
 
@@ -1525,9 +1551,10 @@ simply a String.
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 79</span>
 
-<span class='kw'>def</span> <span class='id variable'>variable</span><span class='lparen'>(</span><span class='id type'>type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='id type'>type</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='variable identifier id'>variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='complex_variable identifier id'>complex_variable</span><span class='lparen token'>(</span><span class='type identifier id'>type</span><span class='comma token'>,</span> <span class='string val'>'/'</span><span class='comma token'>,</span> <span class='integer val'>1</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1570,9 +1597,10 @@ simply a String.
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 33</span>
 
-<span class='kw'>def</span> <span class='id whole_path'>whole_path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id path'>path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id complete'>complete</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='whole_path identifier id'>whole_path</span><span class='lparen token'>(</span><span class='p identifier id'>p</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='p identifier id'>p</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='complete identifier id'>complete</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -1583,9 +1611,9 @@ simply a String.
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 01:56:55 2011 by 
+  Generated on Wed Oct 19 19:43:44 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.3 (ruby-1.9.2).
+  0.7.3 (ruby-1.8.7).
 </div>
 
   </body>

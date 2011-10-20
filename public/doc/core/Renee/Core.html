@@ -114,7 +114,8 @@ for decalaring new instances.</p>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='const'>Renee</span><span class='op'>::</span><span class='const'>Core</span><span class='period'>.</span><span class='id new'>new</span> <span class='lbrace'>{</span> <span class='id path'>path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/hello</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='symbol'>:ok</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='Renee constant id'>Renee</span><span class='colon2 op'>::</span><span class='Core constant id'>Core</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='lbrace token'>{</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'/hello'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='symbol val'>:ok</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -127,7 +128,7 @@ for decalaring new instances.</p>
     
    
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Core/Application.html" title="Renee::Core::Application (class)">Application</a></span>, <span class='object_link'><a href="Core/ClientError.html" title="Renee::Core::ClientError (class)">ClientError</a></span>, <span class='object_link'><a href="Core/Response.html" title="Renee::Core::Response (class)">Response</a></span>, <span class='object_link'><a href="Core/Settings.html" title="Renee::Core::Settings (class)">Settings</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Core/Application.html" title="Renee::Core::Application (class)">Application</a></span>, <span class='object_link'><a href="Core/ClientError.html" title="Renee::Core::ClientError (class)">ClientError</a></span>, <span class='object_link'><a href="Core/Matcher.html" title="Renee::Core::Matcher (class)">Matcher</a></span>, <span class='object_link'><a href="Core/Response.html" title="Renee::Core::Response (class)">Response</a></span>, <span class='object_link'><a href="Core/Settings.html" title="Renee::Core::Settings (class)">Settings</a></span>
     
   
 </p>
@@ -149,12 +150,24 @@ for decalaring new instances.</p>
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.1.1</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+        <dd><pre class="code"><span class='string val'>&quot;0.1.1&quot;</span>
+</pre></dd>
       
         <dt id="IntegerMatcher-constant" class="">IntegerMatcher =
-          
+          <div class="docstring">
+  <div class="discussion">
+    <p>Matcher for Integers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
-        <dd><pre class="code"><span class='const'>Matcher</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\d+</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id on_transform'>on_transform</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id v'>v</span><span class='op'>|</span> <span class='const'>Integer</span><span class='lparen'>(</span><span class='id v'>v</span><span class='rparen'>)</span><span class='rbrace'>}</span></pre></dd>
+        <dd><pre class="code"><span class='Matcher constant id'>Matcher</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='regexp val'>/\d+/</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='on_transform identifier id'>on_transform</span><span class='lbrace token'>{</span>
+</pre></dd>
       
     </dl>
   
@@ -371,11 +384,12 @@ the context of that new instance.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core.rb', line 32</span>
 
-<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id base_application_class'>base_application_class</span> <span class='op'>=</span> <span class='const'>Application</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id application_block'>application_block</span><span class='rparen'>)</span>
-  <span class='ivar'>@base_application_class</span> <span class='op'>=</span> <span class='id base_application_class'>base_application_class</span>
-  <span class='ivar'>@application_block</span> <span class='op'>=</span> <span class='id application_block'>application_block</span>
-  <span class='ivar'>@settings</span> <span class='op'>=</span> <span class='const'>Settings</span><span class='period'>.</span><span class='id new'>new</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='base_application_class identifier id'>base_application_class</span> <span class='assign token'>=</span> <span class='Application constant id'>Application</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='application_block identifier id'>application_block</span><span class='rparen token'>)</span>
+  <span class='@base_application_class ivar id'>@base_application_class</span> <span class='assign token'>=</span> <span class='base_application_class identifier id'>base_application_class</span>
+  <span class='@application_block ivar id'>@application_block</span> <span class='assign token'>=</span> <span class='application_block identifier id'>application_block</span>
+  <span class='@settings ivar id'>@settings</span> <span class='assign token'>=</span> <span class='Settings constant id'>Settings</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -419,9 +433,10 @@ the context of that new instance.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core.rb', line 23</span>
 
-<span class='kw'>def</span> <span class='id application_block'>application_block</span>
-  <span class='ivar'>@application_block</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='application_block identifier id'>application_block</span>
+  <span class='@application_block ivar id'>@application_block</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -460,9 +475,10 @@ the context of that new instance.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core.rb', line 25</span>
 
-<span class='kw'>def</span> <span class='id settings'>settings</span>
-  <span class='ivar'>@settings</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='settings identifier id'>settings</span>
+  <span class='@settings ivar id'>@settings</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -548,9 +564,10 @@ the context of that new instance.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core.rb', line 46</span>
 
-<span class='kw'>def</span> <span class='id call'>call</span><span class='lparen'>(</span><span class='id env'>env</span><span class='rparen'>)</span>
-  <span class='id application_class'>application_class</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id settings'>settings</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id application_block'>application_block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id env'>env</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
+  <span class='application_class identifier id'>application_class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='settings identifier id'>settings</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='application_block identifier id'>application_block</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -578,7 +595,8 @@ or a block containing the configuration settings.</p>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code">Renee::Core.new { ... }.setup { views_path &quot;./views&quot; }</pre>
+      <pre class="example code"><span class='Renee constant id'>Renee</span><span class='colon2 op'>::</span><span class='Core constant id'>Core</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='lbrace token'>{</span> <span class='dot3 op'>...</span> <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='setup identifier id'>setup</span> <span class='lbrace token'>{</span> <span class='views_path identifier id'>views_path</span> <span class='string val'>&quot;./views&quot;</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 
@@ -603,16 +621,17 @@ or a block containing the configuration settings.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core.rb', line 58</span>
 
-<span class='kw'>def</span> <span class='id setup'>setup</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You cannot supply both an argument and a block to the method.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id path'>path</span><span class='period'>.</span><span class='id nil?'>nil?</span> <span class='op'>^</span> <span class='id blk'>blk</span><span class='period'>.</span><span class='id nil?'>nil?</span>
-  <span class='kw'>case</span> <span class='id path'>path</span>
-  <span class='kw'>when</span> <span class='kw'>nil</span>      <span class='kw'>then</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='const'>Settings</span> <span class='kw'>then</span> <span class='ivar'>@settings</span> <span class='op'>=</span> <span class='id path'>path</span>
-  <span class='kw'>when</span> <span class='const'>String</span>   <span class='kw'>then</span> <span class='const'>File</span><span class='period'>.</span><span class='id exist?'>exist?</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id path'>path</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The settings file </span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_content'> does not exist</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='kw'>else</span>               <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Could not setup with </span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='period'>.</span><span class='id inspect'>inspect</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-  <span class='kw'>self</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='setup identifier id'>setup</span><span class='lparen token'>(</span><span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='string val'>&quot;You cannot supply both an argument and a block to the method.&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='path identifier id'>path</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span> <span class='bitxor op'>^</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
+  <span class='case case kw'>case</span> <span class='path identifier id'>path</span>
+  <span class='when when kw'>when</span> <span class='nil nil kw'>nil</span>      <span class='then then kw'>then</span> <span class='settings identifier id'>settings</span><span class='dot token'>.</span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='when when kw'>when</span> <span class='Settings constant id'>Settings</span> <span class='then then kw'>then</span> <span class='@settings ivar id'>@settings</span> <span class='assign token'>=</span> <span class='path identifier id'>path</span>
+  <span class='when when kw'>when</span> <span class='String constant id'>String</span>   <span class='then then kw'>then</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='exist? fid id'>exist?</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span> <span class='question op'>?</span> <span class='settings identifier id'>settings</span><span class='dot token'>.</span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='File constant id'>File</span><span class='dot token'>.</span><span class='read identifier id'>read</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='integer val'>1</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='dstring node'>&quot;The settings file #{path} does not exist&quot;</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>               <span class='raise identifier id'>raise</span> <span class='dstring node'>&quot;Could not setup with #{path.inspect}&quot;</span>
+  <span class='end end kw'>end</span>
+  <span class='self self kw'>self</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -623,9 +642,9 @@ or a block containing the configuration settings.</p>
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 01:56:54 2011 by 
+  Generated on Wed Oct 19 19:43:42 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.3 (ruby-1.9.2).
+  0.7.3 (ruby-1.8.7).
 </div>
 
   </body>

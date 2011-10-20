@@ -306,8 +306,9 @@
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code">res.body &quot;hello&quot;
-res.body =&gt; &quot;hello&quot;</pre>
+      <pre class="example code"><span class='res identifier id'>res</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='string val'>&quot;hello&quot;</span>
+<span class='res identifier id'>res</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;hello&quot;</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -346,9 +347,10 @@ res.body =&gt; &quot;hello&quot;</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 46</span>
 
-<span class='kw'>def</span> <span class='id body'>body</span><span class='lparen'>(</span><span class='id val'>val</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id val'>val</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id body_attr'>body_attr</span> <span class='op'>=</span> <span class='id val'>val</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id body_attr'>body_attr</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='body identifier id'>body</span><span class='lparen token'>(</span><span class='val identifier id'>val</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='val identifier id'>val</span> <span class='integer val'>? </span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='body_attr identifier id'>body_attr</span> <span class='assign token'>=</span> <span class='val identifier id'>val</span> <span class='colon op'>:</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='body_attr identifier id'>body_attr</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -379,7 +381,8 @@ res.body =&gt; &quot;hello&quot;</pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id res'>res</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&quot;</span></span></pre>
+      <pre class="example code"><span class='res identifier id'>res</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='string val'>&quot;Hello&quot;</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -417,10 +420,11 @@ res.body =&gt; &quot;hello&quot;</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 13</span>
 
-<span class='kw'>def</span> <span class='id body='>body=</span><span class='lparen'>(</span><span class='id value'>value</span><span class='rparen'>)</span>
-  <span class='id value'>value</span> <span class='op'>=</span> <span class='id value'>value</span><span class='period'>.</span><span class='id body'>body</span> <span class='kw'>while</span> <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span> <span class='op'>===</span> <span class='id value'>value</span>
-  <span class='ivar'>@body</span> <span class='op'>=</span> <span class='const'>String</span> <span class='op'>===</span> <span class='id value'>value</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id value'>value</span><span class='period'>.</span><span class='id to_str'>to_str</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id value'>value</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='body= identifier id'>body=</span><span class='lparen token'>(</span><span class='value identifier id'>value</span><span class='rparen token'>)</span>
+  <span class='value identifier id'>value</span> <span class='assign token'>=</span> <span class='value identifier id'>value</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='while while_mod kw'>while</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='Response constant id'>Response</span> <span class='eqq op'>===</span> <span class='value identifier id'>value</span>
+  <span class='@body ivar id'>@body</span> <span class='assign token'>=</span> <span class='String constant id'>String</span> <span class='eqq op'>===</span> <span class='value identifier id'>value</span> <span class='integer val'>? </span><span class='lbrack token'>[</span><span class='value identifier id'>value</span><span class='dot token'>.</span><span class='to_str identifier id'>to_str</span><span class='rbrack token'>]</span> <span class='colon op'>:</span> <span class='value identifier id'>value</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -444,7 +448,8 @@ res.body =&gt; &quot;hello&quot;</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 21</span>
 
-<span class='kw'>alias</span> <span class='symbol'>:body_attr</span>  <span class='symbol'>:body</span></pre>
+<span class='alias alias kw'>alias</span> <span class='symbol val'>:body_attr</span>  <span class='symbol val'>:body</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -489,17 +494,18 @@ Calculates the size of the body content length and removes headers for 1xx statu
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 65</span>
 
-<span class='kw'>def</span> <span class='id finish'>finish</span>
-  <span class='kw'>if</span> <span class='id status'>status</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='op'>/</span> <span class='int'>100</span> <span class='op'>==</span> <span class='int'>1</span>
-    <span class='id headers'>headers</span><span class='period'>.</span><span class='id delete'>delete</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Length</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id headers'>headers</span><span class='period'>.</span><span class='id delete'>delete</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>elsif</span> <span class='const'>Array</span> <span class='op'>===</span> <span class='id body'>body</span> <span class='kw'>and</span> <span class='kw'>not</span> <span class='lbracket'>[</span><span class='int'>204</span><span class='comma'>,</span> <span class='int'>304</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id status'>status</span><span class='period'>.</span><span class='id to_i'>to_i</span><span class='rparen'>)</span>
-    <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Length</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id body'>body</span><span class='period'>.</span><span class='id inject'>inject</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id l'>l</span><span class='comma'>,</span> <span class='id p'>p</span><span class='op'>|</span> <span class='id l'>l</span> <span class='op'>+</span> <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Utils</span><span class='period'>.</span><span class='id bytesize'>bytesize</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id to_s'>to_s</span>
-  <span class='kw'>end</span>
+<span class='def def kw'>def</span> <span class='finish identifier id'>finish</span>
+  <span class='if if kw'>if</span> <span class='status identifier id'>status</span><span class='dot token'>.</span><span class='to_i identifier id'>to_i</span> <span class='div op'>/</span> <span class='integer val'>100</span> <span class='eq op'>==</span> <span class='integer val'>1</span>
+    <span class='headers identifier id'>headers</span><span class='dot token'>.</span><span class='delete identifier id'>delete</span> <span class='string val'>&quot;Content-Length&quot;</span>
+    <span class='headers identifier id'>headers</span><span class='dot token'>.</span><span class='delete identifier id'>delete</span> <span class='string val'>&quot;Content-Type&quot;</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='Array constant id'>Array</span> <span class='eqq op'>===</span> <span class='body identifier id'>body</span> <span class='and and kw'>and</span> <span class='not not kw'>not</span> <span class='lbrack token'>[</span><span class='integer val'>204</span><span class='comma token'>,</span> <span class='integer val'>304</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='status identifier id'>status</span><span class='dot token'>.</span><span class='to_i identifier id'>to_i</span><span class='rparen token'>)</span>
+    <span class='headers identifier id'>headers</span><span class='lbrack token'>[</span><span class='string val'>&quot;Content-Length&quot;</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='body identifier id'>body</span><span class='dot token'>.</span><span class='inject identifier id'>inject</span><span class='lparen token'>(</span><span class='integer val'>0</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='l identifier id'>l</span><span class='comma token'>,</span> <span class='p identifier id'>p</span><span class='bitor op'>|</span> <span class='l identifier id'>l</span> <span class='plus op'>+</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='Utils constant id'>Utils</span><span class='dot token'>.</span><span class='bytesize identifier id'>bytesize</span><span class='lparen token'>(</span><span class='p identifier id'>p</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+  <span class='end end kw'>end</span>
 
-  <span class='id status'>status</span><span class='comma'>,</span> <span class='id headers'>headers</span><span class='comma'>,</span> <span class='id result'>result</span> <span class='op'>=</span> <span class='kw'>super</span>
-  <span class='lbracket'>[</span><span class='id status'>status</span><span class='comma'>,</span> <span class='id headers'>headers</span><span class='comma'>,</span> <span class='id result'>result</span><span class='rbracket'>]</span>
-<span class='kw'>end</span></pre>
+  <span class='status identifier id'>status</span><span class='comma token'>,</span> <span class='headers identifier id'>headers</span><span class='comma token'>,</span> <span class='result identifier id'>result</span> <span class='assign token'>=</span> <span class='super super kw'>super</span>
+  <span class='lbrack token'>[</span><span class='status identifier id'>status</span><span class='comma token'>,</span> <span class='headers identifier id'>headers</span><span class='comma token'>,</span> <span class='result identifier id'>result</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -526,8 +532,9 @@ Calculates the size of the body content length and removes headers for 1xx statu
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code">res.headers :foo =&gt; &quot;bar&quot;
-res.headers =&gt; { :foo =&gt; &quot;bar&quot; }</pre>
+      <pre class="example code"><span class='res identifier id'>res</span><span class='dot token'>.</span><span class='headers identifier id'>headers</span> <span class='symbol val'>:foo</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;bar&quot;</span>
+<span class='res identifier id'>res</span><span class='dot token'>.</span><span class='headers identifier id'>headers</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span> <span class='symbol val'>:foo</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;bar&quot;</span> <span class='rbrace token'>}</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -566,9 +573,10 @@ res.headers =&gt; { :foo =&gt; &quot;bar&quot; }</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 59</span>
 
-<span class='kw'>def</span> <span class='id headers'>headers</span><span class='lparen'>(</span><span class='id attrs'>attrs</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id attrs'>attrs</span> <span class='op'>?</span> <span class='id attrs'>attrs</span><span class='period'>.</span><span class='id each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id v'>v</span><span class='op'>|</span> <span class='kw'>self</span><span class='lbracket'>[</span><span class='id k'>k</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id v'>v</span> <span class='rbrace'>}</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id header'>header</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='headers identifier id'>headers</span><span class='lparen token'>(</span><span class='attrs identifier id'>attrs</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='attrs identifier id'>attrs</span> <span class='integer val'>? </span><span class='attrs identifier id'>attrs</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='bitor op'>|</span> <span class='self self kw'>self</span><span class='lbrack token'>[</span><span class='k identifier id'>k</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='v identifier id'>v</span> <span class='rbrace token'>}</span> <span class='colon op'>:</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='header identifier id'>header</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -595,8 +603,9 @@ res.headers =&gt; { :foo =&gt; &quot;bar&quot; }</pre>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code">res.status 400
-res.status =&gt; 400</pre>
+      <pre class="example code"><span class='res identifier id'>res</span><span class='dot token'>.</span><span class='status identifier id'>status</span> <span class='integer val'>400</span>
+<span class='res identifier id'>res</span><span class='dot token'>.</span><span class='status identifier id'>status</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>400</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -635,9 +644,10 @@ res.status =&gt; 400</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 33</span>
 
-<span class='kw'>def</span> <span class='id status'>status</span><span class='lparen'>(</span><span class='id val'>val</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id val'>val</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id status_attr'>status_attr</span> <span class='op'>=</span> <span class='id val'>val</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id status_attr'>status_attr</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='status identifier id'>status</span><span class='lparen token'>(</span><span class='val identifier id'>val</span><span class='assign token'>=</span><span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='val identifier id'>val</span> <span class='integer val'>? </span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='status_attr identifier id'>status_attr</span> <span class='assign token'>=</span> <span class='val identifier id'>val</span> <span class='colon op'>:</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='status_attr identifier id'>status_attr</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -671,7 +681,8 @@ res.status =&gt; 400</pre>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 19</span>
 
-<span class='kw'>alias</span> <span class='symbol'>:status_attr</span> <span class='symbol'>:status</span></pre>
+<span class='alias alias kw'>alias</span> <span class='symbol val'>:status_attr</span> <span class='symbol val'>:status</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -682,9 +693,9 @@ res.status =&gt; 400</pre>
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 01:56:54 2011 by 
+  Generated on Wed Oct 19 19:43:42 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.3 (ruby-1.9.2).
+  0.7.3 (ruby-1.8.7).
 </div>
 
   </body>

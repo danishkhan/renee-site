@@ -274,10 +274,11 @@ in the order for which the variables were decalared in #register.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/url_generation.rb', line 53</span>
 
-<span class='kw'>def</span> <span class='id path'>path</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span>
-  <span class='id generator'>generator</span> <span class='op'>=</span> <span class='id url_generators'>url_generators</span><span class='lbracket'>[</span><span class='id name'>name</span><span class='rbracket'>]</span>
-  <span class='id generator'>generator</span> <span class='op'>?</span> <span class='id generator'>generator</span><span class='period'>.</span><span class='id path'>path</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Generator for </span><span class='embexpr_beg'>#{</span><span class='id name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> doesn't exist</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='generator identifier id'>generator</span> <span class='assign token'>=</span> <span class='url_generators identifier id'>url_generators</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span>
+  <span class='generator identifier id'>generator</span> <span class='integer val'>? </span><span class='generator identifier id'>generator</span><span class='dot token'>.</span><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='dstring node'>&quot;Generator for #{name} doesn't exist&quot;</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -304,9 +305,10 @@ in the order for which the variables were decalared in #register.</p>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id renee'>renee</span><span class='period'>.</span><span class='id prefix'>prefix</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/prefix</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-  <span class='id renee'>renee</span><span class='period'>.</span><span class='id register'>register</span><span class='lparen'>(</span><span class='symbol'>:prefix_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># would register /prefix/path
-</span><span class='rbrace'>}</span></pre>
+      <pre class="example code"><span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='prefix identifier id'>prefix</span><span class='lparen token'>(</span><span class='string val'>&quot;/prefix&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span>
+  <span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='register identifier id'>register</span><span class='lparen token'>(</span><span class='symbol val'>:prefix_path</span><span class='comma token'>,</span> <span class='string val'>&quot;/path&quot;</span><span class='rparen token'>)</span> <span class='comment val'># would register /prefix/path</span>
+<span class='rbrace token'>}</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -380,22 +382,23 @@ in the order for which the variables were decalared in #register.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/url_generation.rb', line 30</span>
 
-<span class='kw'>def</span> <span class='id prefix'>prefix</span><span class='lparen'>(</span><span class='id prefix'>prefix</span><span class='comma'>,</span> <span class='id defaults'>defaults</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-  <span class='id generator'>generator</span> <span class='op'>=</span> <span class='kw'>self</span>
-  <span class='id subgenerator'>subgenerator</span> <span class='op'>=</span> <span class='const'>Class</span><span class='period'>.</span><span class='id new'>new</span> <span class='lbrace'>{</span>
-    <span class='id include'>include</span> <span class='const'>URLGeneration</span>
-    <span class='id define_method'>define_method</span><span class='lparen'>(</span><span class='symbol'>:url_generators</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id generator'>generator</span><span class='period'>.</span><span class='id send'>send</span><span class='lparen'>(</span><span class='symbol'>:url_generators</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-  <span class='rbrace'>}</span><span class='period'>.</span><span class='id new'>new</span>
-  <span class='id subgenerator'>subgenerator</span><span class='period'>.</span><span class='id instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@generation_prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@generation_prefix</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id prefix'>prefix</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='id subgenerator'>subgenerator</span><span class='period'>.</span><span class='id instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@generation_defaults</span><span class='comma'>,</span> <span class='id defaults_for_generation'>defaults_for_generation</span><span class='lparen'>(</span><span class='id defaults'>defaults</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id block_given?'>block_given?</span>
-    <span class='id old_prefix'>old_prefix</span><span class='comma'>,</span> <span class='id old_defaults'>old_defaults</span> <span class='op'>=</span> <span class='ivar'>@generation_prefix</span><span class='comma'>,</span> <span class='ivar'>@generation_defaults</span>
-    <span class='ivar'>@generation_prefix</span><span class='comma'>,</span> <span class='ivar'>@generation_defaults</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@generation_prefix</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id prefix'>prefix</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id defaults_for_generation'>defaults_for_generation</span><span class='lparen'>(</span><span class='id defaults'>defaults</span><span class='rparen'>)</span>
-    <span class='id subgenerator'>subgenerator</span><span class='period'>.</span><span class='id instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
-    <span class='ivar'>@generation_prefix</span><span class='comma'>,</span> <span class='ivar'>@generation_defaults</span> <span class='op'>=</span> <span class='id old_prefix'>old_prefix</span><span class='comma'>,</span> <span class='id old_defaults'>old_defaults</span>
-  <span class='kw'>end</span>
-  <span class='id subgenerator'>subgenerator</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='prefix identifier id'>prefix</span><span class='lparen token'>(</span><span class='prefix identifier id'>prefix</span><span class='comma token'>,</span> <span class='defaults identifier id'>defaults</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='generator identifier id'>generator</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='subgenerator identifier id'>subgenerator</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='lbrace token'>{</span>
+    <span class='include identifier id'>include</span> <span class='URLGeneration constant id'>URLGeneration</span>
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='symbol val'>:url_generators</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='generator identifier id'>generator</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='symbol val'>:url_generators</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+  <span class='subgenerator identifier id'>subgenerator</span><span class='dot token'>.</span><span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='symbol val'>:@generation_prefix</span><span class='comma token'>,</span> <span class='dstring node'>&quot;#{@generation_prefix}#{prefix}&quot;</span><span class='rparen token'>)</span>
+  <span class='subgenerator identifier id'>subgenerator</span><span class='dot token'>.</span><span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='symbol val'>:@generation_defaults</span><span class='comma token'>,</span> <span class='defaults_for_generation identifier id'>defaults_for_generation</span><span class='lparen token'>(</span><span class='defaults identifier id'>defaults</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='block_given? fid id'>block_given?</span>
+    <span class='old_prefix identifier id'>old_prefix</span><span class='comma token'>,</span> <span class='old_defaults identifier id'>old_defaults</span> <span class='assign token'>=</span> <span class='@generation_prefix ivar id'>@generation_prefix</span><span class='comma token'>,</span> <span class='@generation_defaults ivar id'>@generation_defaults</span>
+    <span class='@generation_prefix ivar id'>@generation_prefix</span><span class='comma token'>,</span> <span class='@generation_defaults ivar id'>@generation_defaults</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;#{@generation_prefix}#{prefix}&quot;</span><span class='comma token'>,</span> <span class='defaults_for_generation identifier id'>defaults_for_generation</span><span class='lparen token'>(</span><span class='defaults identifier id'>defaults</span><span class='rparen token'>)</span>
+    <span class='subgenerator identifier id'>subgenerator</span><span class='dot token'>.</span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+    <span class='@generation_prefix ivar id'>@generation_prefix</span><span class='comma token'>,</span> <span class='@generation_defaults ivar id'>@generation_defaults</span> <span class='assign token'>=</span> <span class='old_prefix identifier id'>old_prefix</span><span class='comma token'>,</span> <span class='old_defaults identifier id'>old_defaults</span>
+  <span class='end end kw'>end</span>
+  <span class='subgenerator identifier id'>subgenerator</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -422,9 +425,10 @@ in the order for which the variables were decalared in #register.</p>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='id renee'>renee</span><span class='period'>.</span><span class='id register'>register</span><span class='lparen'>(</span><span class='symbol'>:path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/my/:var/path</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id renee'>renee</span><span class='period'>.</span><span class='id path'>path</span><span class='lparen'>(</span><span class='symbol'>:path</span><span class='comma'>,</span> <span class='int'>123</span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;/my/123/path&quot;
-</span><span class='id renee'>renee</span><span class='period'>.</span><span class='id path'>path</span><span class='lparen'>(</span><span class='symbol'>:path</span><span class='comma'>,</span> <span class='symbol'>:var</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hey you</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='comment'># =&gt; &quot;/my/hey%20you/path&quot;</span></pre>
+      <pre class="example code"><span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='register identifier id'>register</span><span class='lparen token'>(</span><span class='symbol val'>:path</span><span class='comma token'>,</span> <span class='string val'>&quot;/my/:var/path&quot;</span><span class='rparen token'>)</span>
+<span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='symbol val'>:path</span><span class='comma token'>,</span> <span class='integer val'>123</span><span class='rparen token'>)</span> <span class='comment val'># =&gt; &quot;/my/123/path&quot;</span>
+<span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='symbol val'>:path</span><span class='comma token'>,</span> <span class='symbol val'>:var</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'hey you'</span><span class='rparen token'>)</span> <span class='comment val'># =&gt; &quot;/my/hey%20you/path&quot;</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -493,9 +497,10 @@ in the order for which the variables were decalared in #register.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/url_generation.rb', line 17</span>
 
-<span class='kw'>def</span> <span class='id register'>register</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id pattern'>pattern</span><span class='comma'>,</span> <span class='id defaults'>defaults</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='id url_generators'>url_generators</span><span class='lbracket'>[</span><span class='id name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Generator</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@generation_prefix</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id pattern'>pattern</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id defaults_for_generation'>defaults_for_generation</span><span class='lparen'>(</span><span class='id defaults'>defaults</span><span class='rparen'>)</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='register identifier id'>register</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='pattern identifier id'>pattern</span><span class='comma token'>,</span> <span class='defaults identifier id'>defaults</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='url_generators identifier id'>url_generators</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='Generator constant id'>Generator</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{@generation_prefix}#{pattern}&quot;</span><span class='comma token'>,</span> <span class='defaults_for_generation identifier id'>defaults_for_generation</span><span class='lparen token'>(</span><span class='defaults identifier id'>defaults</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -574,10 +579,11 @@ in the order for which the variables were decalared in #register.</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/renee-core/url_generation.rb', line 61</span>
 
-<span class='kw'>def</span> <span class='id url'>url</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span>
-  <span class='id generator'>generator</span> <span class='op'>=</span> <span class='id url_generators'>url_generators</span><span class='lbracket'>[</span><span class='id name'>name</span><span class='rbracket'>]</span>
-  <span class='id generator'>generator</span> <span class='op'>?</span> <span class='id generator'>generator</span><span class='period'>.</span><span class='id url'>url</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Generator for </span><span class='embexpr_beg'>#{</span><span class='id name'>name</span><span class='rbrace'>}</span><span class='tstring_content'> doesn't exist</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='url identifier id'>url</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='generator identifier id'>generator</span> <span class='assign token'>=</span> <span class='url_generators identifier id'>url_generators</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span>
+  <span class='generator identifier id'>generator</span> <span class='integer val'>? </span><span class='generator identifier id'>generator</span><span class='dot token'>.</span><span class='url identifier id'>url</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='dstring node'>&quot;Generator for #{name} doesn't exist&quot;</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -588,9 +594,9 @@ in the order for which the variables were decalared in #register.</p>
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 01:56:54 2011 by 
+  Generated on Wed Oct 19 19:43:45 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.7.3 (ruby-1.9.2).
+  0.7.3 (ruby-1.8.7).
 </div>
 
   </body>
