@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ReneeCore::URLGeneration
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (U)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></span>
+     &raquo; 
+    <span class="title">URLGeneration</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: ReneeCore::URLGeneration
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee_core/url_generation.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>URL generator for creating paths and URLs within your application.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#path-instance_method" title="#path (instance method)">- (Object) <strong>path</strong>(name, *args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Generates a path for a given name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#prefix-instance_method" title="#prefix (instance method)">- (Object) <strong>prefix</strong>(prefix, defaults = nil, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Allows the creation of generation contexts.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register-instance_method" title="#register (instance method)">- (Object) <strong>register</strong>(name, pattern, defaults = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Registers new paths for generation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#url-instance_method" title="#url (instance method)">- (Object) <strong>url</strong>(name, *args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Generates a url for a given name.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>path</strong>(name, *args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Generates a path for a given name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The name of the path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The values used to generate the path. Can be named with using :name => "value" or supplied
+in the order for which the variables were decalared in #register.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#register-instance_method" title="ReneeCore::URLGeneration#register (method)">#register</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/url_generation.rb', line 52</span>
+
+<span class='def def kw'>def</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='generator identifier id'>generator</span> <span class='assign token'>=</span> <span class='url_generators identifier id'>url_generators</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span>
+  <span class='generator identifier id'>generator</span> <span class='integer val'>? </span><span class='generator identifier id'>generator</span><span class='dot token'>.</span><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='dstring node'>&quot;Generator for #{name} doesn't exist&quot;</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="prefix-instance_method">
+  
+    - (<tt>Object</tt>) <strong>prefix</strong>(prefix, defaults = nil, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Allows the creation of generation contexts.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='prefix identifier id'>prefix</span><span class='lparen token'>(</span><span class='string val'>&quot;/prefix&quot;</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span>
+  <span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='register identifier id'>register</span><span class='lparen token'>(</span><span class='symbol val'>:prefix_path</span><span class='comma token'>,</span> <span class='string val'>&quot;/path&quot;</span><span class='rparen token'>)</span> <span class='comment val'># would register /prefix/path</span>
+<span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>prefix</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The prefix to add to subsequent calls to #register.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>defaults</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The defaults to add to subsequent calls to #register.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#register-instance_method" title="ReneeCore::URLGeneration#register (method)">#register</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/url_generation.rb', line 29</span>
+
+<span class='def def kw'>def</span> <span class='prefix identifier id'>prefix</span><span class='lparen token'>(</span><span class='prefix identifier id'>prefix</span><span class='comma token'>,</span> <span class='defaults identifier id'>defaults</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='generator identifier id'>generator</span> <span class='assign token'>=</span> <span class='self self kw'>self</span>
+  <span class='subgenerator identifier id'>subgenerator</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='lbrace token'>{</span>
+    <span class='include identifier id'>include</span> <span class='URLGeneration constant id'>URLGeneration</span>
+    <span class='define_method identifier id'>define_method</span><span class='lparen token'>(</span><span class='symbol val'>:url_generators</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='generator identifier id'>generator</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='symbol val'>:url_generators</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
+  <span class='subgenerator identifier id'>subgenerator</span><span class='dot token'>.</span><span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='symbol val'>:@generation_prefix</span><span class='comma token'>,</span> <span class='dstring node'>&quot;#{@generation_prefix}#{prefix}&quot;</span><span class='rparen token'>)</span>
+  <span class='subgenerator identifier id'>subgenerator</span><span class='dot token'>.</span><span class='instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='symbol val'>:@generation_defaults</span><span class='comma token'>,</span> <span class='defaults_for_generation identifier id'>defaults_for_generation</span><span class='lparen token'>(</span><span class='defaults identifier id'>defaults</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='block_given? fid id'>block_given?</span>
+    <span class='old_prefix identifier id'>old_prefix</span><span class='comma token'>,</span> <span class='old_defaults identifier id'>old_defaults</span> <span class='assign token'>=</span> <span class='@generation_prefix ivar id'>@generation_prefix</span><span class='comma token'>,</span> <span class='@generation_defaults ivar id'>@generation_defaults</span>
+    <span class='@generation_prefix ivar id'>@generation_prefix</span><span class='comma token'>,</span> <span class='@generation_defaults ivar id'>@generation_defaults</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;#{@generation_prefix}#{prefix}&quot;</span><span class='comma token'>,</span> <span class='defaults_for_generation identifier id'>defaults_for_generation</span><span class='lparen token'>(</span><span class='defaults identifier id'>defaults</span><span class='rparen token'>)</span>
+    <span class='subgenerator identifier id'>subgenerator</span><span class='dot token'>.</span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+    <span class='@generation_prefix ivar id'>@generation_prefix</span><span class='comma token'>,</span> <span class='@generation_defaults ivar id'>@generation_defaults</span> <span class='assign token'>=</span> <span class='old_prefix identifier id'>old_prefix</span><span class='comma token'>,</span> <span class='old_defaults identifier id'>old_defaults</span>
+  <span class='end end kw'>end</span>
+  <span class='subgenerator identifier id'>subgenerator</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="register-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register</strong>(name, pattern, defaults = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Registers new paths for generation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='register identifier id'>register</span><span class='lparen token'>(</span><span class='symbol val'>:path</span><span class='comma token'>,</span> <span class='string val'>&quot;/my/:var/path&quot;</span><span class='rparen token'>)</span>
+<span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='symbol val'>:path</span><span class='comma token'>,</span> <span class='integer val'>123</span><span class='rparen token'>)</span> <span class='comment val'># =&gt; &quot;/my/123/path&quot;</span>
+<span class='renee identifier id'>renee</span><span class='dot token'>.</span><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='symbol val'>:path</span><span class='comma token'>,</span> <span class='symbol val'>:var</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'hey you'</span><span class='rparen token'>)</span> <span class='comment val'># =&gt; &quot;/my/hey%20you/path&quot;</span>
+</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The name of the path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>pattern</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The pattern used for generation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>defaults</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Any default values used for generation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/url_generation.rb', line 16</span>
+
+<span class='def def kw'>def</span> <span class='register identifier id'>register</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='pattern identifier id'>pattern</span><span class='comma token'>,</span> <span class='defaults identifier id'>defaults</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='url_generators identifier id'>url_generators</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='Generator constant id'>Generator</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{@generation_prefix}#{pattern}&quot;</span><span class='comma token'>,</span> <span class='defaults_for_generation identifier id'>defaults_for_generation</span><span class='lparen token'>(</span><span class='defaults identifier id'>defaults</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>url</strong>(name, *args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Generates a url for a given name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The name of the path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The values used to generate the path. Can be named with using :name => "value" or supplied
+in the order for which the variables were decalared in #register.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#path-instance_method" title="ReneeCore::URLGeneration#path (method)">#path</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/url_generation.rb', line 60</span>
+
+<span class='def def kw'>def</span> <span class='url identifier id'>url</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='generator identifier id'>generator</span> <span class='assign token'>=</span> <span class='url_generators identifier id'>url_generators</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span>
+  <span class='generator identifier id'>generator</span> <span class='integer val'>? </span><span class='generator identifier id'>generator</span><span class='dot token'>.</span><span class='url identifier id'>url</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='dstring node'>&quot;Generator for #{name} doesn't exist&quot;</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Thu Oct 20 20:23:05 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ReneeCore::Application::Chaining
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Application.html" title="ReneeCore::Application (class)">Application</a></span></span>
+     &raquo; 
+    <span class="title">Chaining</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: ReneeCore::Application::Chaining
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../Application.html" title="ReneeCore::Application (class)">ReneeCore::Application</a></span>, <span class='object_link'><a href="Routing.html" title="ReneeCore::Application::Routing (module)">Routing</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee_core/application/chaining.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Module for creating chainable methods. To use this within your own modules, first <code>include Chaining</code>, then,
+mark methods you want to be available with <code>chain_method :method_name</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='module module kw'>module</span> <span class='MoreRoutingMethods constant id'>MoreRoutingMethods</span>
+  <span class='include identifier id'>include</span> <span class='Chaining constant id'>Chaining</span>
+  <span class='def def kw'>def</span> <span class='other_routing_method identifier id'>other_routing_method</span>
+    <span class='comment val'># ..</span>
+  <span class='end end kw'>end</span>
+  <span class='chain_method identifier id'>chain_method</span> <span class='symbol val'>:other_routing_method</span>
+</pre>
+    
+  </div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+    
+    <div id="footer">
+  Generated on Thu Oct 20 20:23:02 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

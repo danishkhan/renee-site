@@ -66,7 +66,7 @@ for far more flexibility and freedom in the way that routes and actions are defi
 <p>The bread and butter of Renee are the request verbs reminiscent of Sinatra:</p>
 
 <p><code>ruby
-run Renee::Core.new {
+run ReneeCore.new {
   get    { halt "a get!"  }
   post   { halt "a post!" }
   put    { halt "a put!"  }
@@ -82,7 +82,7 @@ specify the http verb and the use of <code>halt</code> inside the block to send 
 <p>Path is how Renee describes the basic uri path for a route:</p>
 
 <p><code>ruby
-run Renee::Core.new {
+run ReneeCore.new {
   path('blog') { ... }
 }
 </code></p>
@@ -90,7 +90,7 @@ run Renee::Core.new {
 <p>All declarations inside that block will start with <code>/blog</code>. Paths can also be nested within one another:</p>
 
 <p>```ruby
-run Renee::Core.new {
+run ReneeCore.new {
   path('blog') {</p>
 
 <pre class="code"><span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'foo'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='get identifier id'>get</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='string val'>&quot;path is /blog/foo&quot;</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
@@ -236,7 +236,7 @@ can handle different remainders in all the different path blocks.</p>
 having to specify the entire path:</p>
 
 <p><code>ruby
-run Renee::Core.new {
+run ReneeCore.new {
   register(:test, '/test/time')
   register(:test_var, '/test/:id')
 }
@@ -278,7 +278,7 @@ run Renee {
 <p>Halting is the easiest way to render data within a route:</p>
 
 <p><code>ruby
-run Renee::Core.new {
+run ReneeCore.new {
   get { halt 'easy' }
 }
 </code></p>
@@ -332,7 +332,7 @@ get {
 </div></div>
     
     <div id="footer">
-  Generated on Wed Oct 19 20:33:44 2011 by 
+  Generated on Thu Oct 20 20:23:02 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.8.7).
 </div>
