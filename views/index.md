@@ -132,6 +132,12 @@ Not happy with what Renee gives you? You can easily subclass to define whatever 
 
     run MyApp
 
+    # curl http://localhost:9393/justice/great
+    # for great justice
+    # curl http://localhost:9393/justice/good
+    # justice not found
+    
+
 ## Getting started
 
 ### Installation
