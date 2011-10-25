@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ReneeCore::RackInteraction
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></span>
+     &raquo; 
+    <span class="title">RackInteraction</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: ReneeCore::RackInteraction
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee_core/rack_interaction.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>A module that defines useful Rack interaction methods.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build-instance_method" title="#build (instance method)">- (Object) <strong>build</strong> { ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Creates an ad-hoc Rack application within the context of a Rack::Builder.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build%21-instance_method" title="#build! (instance method)">- (Object) <strong>build!</strong>(&amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Creates an ad-hoc Rack application within the context of a Rack::Builder that immediately halts when done.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run-instance_method" title="#run (instance method)">- (Object) <strong>run</strong>(app = nil) {|env| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Runs a rack application.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run%21-instance_method" title="#run! (instance method)">- (Object) <strong>run!</strong>(app = nil, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Runs a rack application and halts immediately.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="build-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build</strong> { ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Creates an ad-hoc Rack application within the context of a Rack::Builder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='get identifier id'>get</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='build identifier id'>build</span> <span class='lbrace token'>{</span> <span class='use identifier id'>use</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='ContentLength constant id'>ContentLength</span><span class='semicolon token'>;</span> <span class='run identifier id'>run</span> <span class='proc identifier id'>proc</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='env identifier id'>env</span><span class='bitor op'>|</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='Response constant id'>Response</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;Hello!&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='finish identifier id'>finish</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+
+<h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>The block to be used to instantiate the <code>Rack::Builder</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/rack_interaction.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='build identifier id'>build</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='run identifier id'>run</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='Builder constant id'>Builder</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_app identifier id'>to_app</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="build!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build!</strong>(&amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Creates an ad-hoc Rack application within the context of a Rack::Builder that immediately halts when done.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='get identifier id'>get</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='build identifier id'>build</span> <span class='lbrace token'>{</span> <span class='use identifier id'>use</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='ContentLength constant id'>ContentLength</span><span class='semicolon token'>;</span> <span class='run identifier id'>run</span> <span class='proc identifier id'>proc</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='env identifier id'>env</span><span class='bitor op'>|</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='Response constant id'>Response</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;Hello!&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='finish identifier id'>finish</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/rack_interaction.rb', line 21</span>
+
+<span class='def def kw'>def</span> <span class='build! fid id'>build!</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='run! fid id'>run!</span> <span class='build identifier id'>build</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="run-instance_method">
+  
+    - (<tt>Object</tt>) <strong>run</strong>(app = nil) {|env| ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Runs a rack application. You must either use <code>app</code> or <code>blk</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='get identifier id'>get</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='run identifier id'>run</span> <span class='proc identifier id'>proc</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='env identifier id'>env</span><span class='bitor op'>|</span> <span class='ReneeCore constant id'>ReneeCore</span><span class='colon2 op'>::</span><span class='Response constant id'>Response</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;Hello!&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='finish identifier id'>finish</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>app</span>
+      
+      
+        <span class='type'>(<tt>#call</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The application to call.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>env</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The block to yield to</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/rack_interaction.rb', line 33</span>
+
+<span class='def def kw'>def</span> <span class='run identifier id'>run</span><span class='lparen token'>(</span><span class='app identifier id'>app</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='string val'>&quot;You cannot supply both a block and an app&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='app identifier id'>app</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span> <span class='bitxor op'>^</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
+  <span class='lparen token'>(</span><span class='app identifier id'>app</span> <span class='orop op'>||</span> <span class='blk identifier id'>blk</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="run!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>run!</strong>(app = nil, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Runs a rack application and halts immediately.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='get identifier id'>get</span> <span class='lbrace token'>{</span> <span class='run identifier id'>run</span> <span class='proc identifier id'>proc</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='env identifier id'>env</span><span class='bitor op'>|</span> <span class='ReneeCore constant id'>ReneeCore</span><span class='colon2 op'>::</span><span class='Response constant id'>Response</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;Hello!&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='finish identifier id'>finish</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>app</span>
+      
+      
+        <span class='type'>(<tt>#call</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The application to call.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#run%21-instance_method" title="ReneeCore::RackInteraction#run! (method)">#run!</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/rack_interaction.rb', line 45</span>
+
+<span class='def def kw'>def</span> <span class='run! fid id'>run!</span><span class='lparen token'>(</span><span class='app identifier id'>app</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='halt identifier id'>halt</span> <span class='run identifier id'>run</span><span class='lparen token'>(</span><span class='app identifier id'>app</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Oct 21 16:39:32 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

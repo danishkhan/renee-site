@@ -81,18 +81,22 @@
   
   
     
+      <dt class="r2">Extended by:</dt>
+      <dd class="r2"><span class='object_link'><a href="ReneeCore/ClassMethods.html" title="ReneeCore::ClassMethods (module)">ClassMethods</a></span></dd>
+      
+    
   
     
-      <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="ReneeCore/URLGeneration.html" title="ReneeCore::URLGeneration (module)">URLGeneration</a></span></dd>
+      <dt class="r1">Includes:</dt>
+      <dd class="r1"><span class='object_link'><a href="ReneeCore/Chaining.html" title="ReneeCore::Chaining (module)">Chaining</a></span>, <span class='object_link'><a href="ReneeCore/EnvAccessors.html" title="ReneeCore::EnvAccessors (module)">EnvAccessors</a></span>, <span class='object_link'><a href="ReneeCore/RackInteraction.html" title="ReneeCore::RackInteraction (module)">RackInteraction</a></span>, <span class='object_link'><a href="ReneeCore/RequestContext.html" title="ReneeCore::RequestContext (module)">RequestContext</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html" title="ReneeCore::Responding (module)">Responding</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html" title="ReneeCore::Routing (module)">Routing</a></span>, <span class='object_link'><a href="ReneeCore/Transform.html" title="ReneeCore::Transform (module)">Transform</a></span></dd>
       
     
   
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/renee_core.rb<span class="defines">,<br />
-  lib/renee_core/matcher.rb,<br /> lib/renee_core/response.rb,<br /> lib/renee_core/settings.rb,<br /> lib/renee_core/exceptions.rb,<br /> lib/renee_core/application.rb,<br /> lib/renee_core/url_generation.rb,<br /> lib/renee_core/application/routing.rb,<br /> lib/renee_core/application/chaining.rb,<br /> lib/renee_core/application/transform.rb,<br /> lib/renee_core/application/responding.rb,<br /> lib/renee_core/application/request_context.rb,<br /> lib/renee_core/application/rack_interaction.rb</span>
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee_core.rb<span class="defines">,<br />
+  lib/renee_core/matcher.rb,<br /> lib/renee_core/routing.rb,<br /> lib/renee_core/response.rb,<br /> lib/renee_core/chaining.rb,<br /> lib/renee_core/transform.rb,<br /> lib/renee_core/exceptions.rb,<br /> lib/renee_core/responding.rb,<br /> lib/renee_core/env_accessors.rb,<br /> lib/renee_core/url_generation.rb,<br /> lib/renee_core/request_context.rb,<br /> lib/renee_core/rack_interaction.rb</span>
 </dd>
   
 </dl>
@@ -114,7 +118,7 @@ for decalaring new instances.</p>
     
       <h4><div class='inline'>
 </div></h4>
-      <pre class="example code"><span class='ReneeCore constant id'>ReneeCore</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='lbrace token'>{</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'/hello'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='symbol val'>:ok</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+      <pre class="example code"><span class='ReneeCore constant id'>ReneeCore</span> <span class='lbrace token'>{</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'/hello'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='symbol val'>:ok</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
 </pre>
     
   </div>
@@ -124,11 +128,11 @@ for decalaring new instances.</p>
 <p class="children">
    
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="ReneeCore/URLGeneration.html" title="ReneeCore::URLGeneration (module)">URLGeneration</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="ReneeCore/Chaining.html" title="ReneeCore::Chaining (module)">Chaining</a></span>, <span class='object_link'><a href="ReneeCore/ClassMethods.html" title="ReneeCore::ClassMethods (module)">ClassMethods</a></span>, <span class='object_link'><a href="ReneeCore/EnvAccessors.html" title="ReneeCore::EnvAccessors (module)">EnvAccessors</a></span>, <span class='object_link'><a href="ReneeCore/RackInteraction.html" title="ReneeCore::RackInteraction (module)">RackInteraction</a></span>, <span class='object_link'><a href="ReneeCore/RequestContext.html" title="ReneeCore::RequestContext (module)">RequestContext</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html" title="ReneeCore::Responding (module)">Responding</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html" title="ReneeCore::Routing (module)">Routing</a></span>, <span class='object_link'><a href="ReneeCore/Transform.html" title="ReneeCore::Transform (module)">Transform</a></span>, <span class='object_link'><a href="ReneeCore/URLGeneration.html" title="ReneeCore::URLGeneration (module)">URLGeneration</a></span>
     
    
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ReneeCore/Application.html" title="ReneeCore::Application (class)">Application</a></span>, <span class='object_link'><a href="ReneeCore/ClientError.html" title="ReneeCore::ClientError (class)">ClientError</a></span>, <span class='object_link'><a href="ReneeCore/Matcher.html" title="ReneeCore::Matcher (class)">Matcher</a></span>, <span class='object_link'><a href="ReneeCore/Response.html" title="ReneeCore::Response (class)">Response</a></span>, <span class='object_link'><a href="ReneeCore/Settings.html" title="ReneeCore::Settings (class)">Settings</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ReneeCore/ClientError.html" title="ReneeCore::ClientError (class)">ClientError</a></span>, <span class='object_link'><a href="ReneeCore/Matcher.html" title="ReneeCore::Matcher (class)">Matcher</a></span>, <span class='object_link'><a href="ReneeCore/Response.html" title="ReneeCore::Response (class)">Response</a></span>
     
   
 </p>
@@ -177,83 +181,35 @@ for decalaring new instances.</p>
   
   
   
-  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#application_block-instance_method" title="#application_block (instance method)">- (Object) <strong>application_block</strong> </a>
-    
-
-    
-  </span>
-  
-  
-    <span class="note title readonly">readonly</span>
-    
   
   
   
   
   
-
-  
-    <span class="summary_desc"><div class='inline'><p>The application block used to initialize this application.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#settings-instance_method" title="#settings (instance method)">- (Object) <strong>settings</strong> </a>
-    
-
-    
-  </span>
-  
-  
-    <span class="note title readonly">readonly</span>
-    
   
   
   
   
   
-
   
-    <span class="summary_desc"><div class='inline'><p>The <span class='object_link'><a href="ReneeCore/Settings.html" title="ReneeCore::Settings (class)">Settings</a></span> object used to initialize this application.</p>
-</div></span>
   
-</li>
-
-    
-  </ul>
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Constants included from <span class='object_link'><a href="ReneeCore/Responding.html" title="ReneeCore::Responding (module)">Responding</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/Responding.html#HTTP_CODES-constant" title="ReneeCore::Responding::HTTP_CODES (constant)">HTTP_CODES</a></span></p>
 
   
   
   
-
   
-    <h2>
-      Class Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#base_application_class-class_method" title="base_application_class (class method)">+ (Object) <strong>base_application_class</strong> </a>
-    
-
-    
-  </span>
+  
+  
   
   
   
@@ -261,93 +217,55 @@ for decalaring new instances.</p>
   
   
 
-  
-    <span class="summary_desc"><div class='inline'><p>The class used as the basis for calls made to ReneeCore.</p>
-</div></span>
-  
-</li>
-
-      
-    </ul>
-  
-    <h2>
-      Instance Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#call-instance_method" title="#call (instance method)">- (Array) <strong>call</strong>(env) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
 
   
-    <span class="summary_desc"><div class='inline'><p>This is a rack-compliant <code>Rack#call</code>.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (ReneeCore) <strong>initialize</strong>(&amp;application_block) </a>
-    
-
-    
-  </span>
-  
-    <span class="note title constructor">constructor</span>
   
   
+  <h2>Instance Attribute Summary</h2>
   
-  
-  
-  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="ReneeCore/ClassMethods.html" title="ReneeCore::ClassMethods (module)">ClassMethods</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/ClassMethods.html#application_block-instance_method" title="ReneeCore::ClassMethods#application_block (method)">application_block</a></span></p>
 
   
-    <span class="summary_desc"><div class='inline'><p>A new instance of ReneeCore.</p>
-</div></span>
   
-</li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Attributes included from <span class='object_link'><a href="ReneeCore/RequestContext.html" title="ReneeCore::RequestContext (module)">RequestContext</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/RequestContext.html#detected_extension-instance_method" title="ReneeCore::RequestContext#detected_extension (method)">detected_extension</a></span>, <span class='object_link'><a href="ReneeCore/RequestContext.html#env-instance_method" title="ReneeCore::RequestContext#env (method)">env</a></span>, <span class='object_link'><a href="ReneeCore/RequestContext.html#is_index_request-instance_method" title="ReneeCore::RequestContext#is_index_request (method)">is_index_request</a></span>, <span class='object_link'><a href="ReneeCore/RequestContext.html#request-instance_method" title="ReneeCore::RequestContext#request (method)">request</a></span></p>
 
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#setup-instance_method" title="#setup (instance method)">- (Object) <strong>setup</strong>(path = nil, &amp;blk) </a>
-    
 
-    
-  </span>
-  
-  
-  
-  
-  
-  
 
   
-    <span class="summary_desc"><div class='inline'><p>Configure settings for your Renee application.</p>
-</div></span>
   
-</li>
-
-      
-    </ul>
   
-
+  
+  
+  <h2>Method Summary</h2>
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/ClassMethods.html" title="ReneeCore::ClassMethods (module)">ClassMethods</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/ClassMethods.html#app-instance_method" title="ReneeCore::ClassMethods#app (method)">app</a></span>, <span class='object_link'><a href="ReneeCore/ClassMethods.html#call-instance_method" title="ReneeCore::ClassMethods#call (method)">call</a></span>, <span class='object_link'><a href="ReneeCore/ClassMethods.html#register_variable_type-instance_method" title="ReneeCore::ClassMethods#register_variable_type (method)">register_variable_type</a></span>, <span class='object_link'><a href="ReneeCore/ClassMethods.html#setup-instance_method" title="ReneeCore::ClassMethods#setup (method)">setup</a></span>, <span class='object_link'><a href="ReneeCore/ClassMethods.html#variable_types-instance_method" title="ReneeCore::ClassMethods#variable_types (method)">variable_types</a></span></p>
 
   
   
@@ -358,363 +276,72 @@ for decalaring new instances.</p>
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/URLGeneration.html" title="ReneeCore::URLGeneration (module)">URLGeneration</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="ReneeCore/URLGeneration.html#path-instance_method" title="ReneeCore::URLGeneration#path (method)">#path</a></span>, <span class='object_link'><a href="ReneeCore/URLGeneration.html#prefix-instance_method" title="ReneeCore::URLGeneration#prefix (method)">#prefix</a></span>, <span class='object_link'><a href="ReneeCore/URLGeneration.html#register-instance_method" title="ReneeCore::URLGeneration#register (method)">#register</a></span>, <span class='object_link'><a href="ReneeCore/URLGeneration.html#url-instance_method" title="ReneeCore::URLGeneration#url (method)">#url</a></span></p>
-<div id="constructor_details" class="method_details_list">
-  <h2>Constructor Details</h2>
-  
-    <div class="method_details first">
-  <p class="signature first" id="initialize-instance_method">
-  
-    - (<tt><span class='object_link'><a href="" title="ReneeCore (class)">ReneeCore</a></span></tt>) <strong>initialize</strong>(&amp;application_block) 
-  
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>A new instance of ReneeCore</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <h3>Parameters:</h3>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>application_block</span>
-      
-      
-        <span class='type'>(<tt>Proc</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>The block of code that will be executed on each invocation of call #call.
-Each time #call is called, a new instance of <span class='object_link'><a href="ReneeCore/Application.html" title="ReneeCore::Application (class)">Application</a></span> will
-be created. The block given will be #instance_eval 'd within
-the context of that new instance.</p>
-</div>
-      
-    </li>
   
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-32
-33
-34</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 32</span>
-
-<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='application_block identifier id'>application_block</span><span class='rparen token'>)</span>
-  <span class='@application_block ivar id'>@application_block</span> <span class='assign token'>=</span> <span class='application_block identifier id'>application_block</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
   
-</div>
-
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
-    
-      
-      <span id=""></span>
-      <span id="application_block-instance_method"></span>
-      <div class="method_details first">
-  <p class="signature first" id="application_block-instance_method">
   
-    - (<tt>Object</tt>) <strong>application_block</strong>  <span class="extras">(readonly)</span>
   
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/Transform.html" title="ReneeCore::Transform (module)">Transform</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/Transform.html#transform-instance_method" title="ReneeCore::Transform#transform (method)">#transform</a></span></p>
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>The application block used to initialize this application.</p>
-
-
-  </div>
-</div>
-<div class="tags">
   
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-23
-24
-25</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 23</span>
-
-<span class='def def kw'>def</span> <span class='application_block identifier id'>application_block</span>
-  <span class='@application_block ivar id'>@application_block</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <span id="settings-instance_method"></span>
-      <div class="method_details ">
-  <p class="signature " id="settings-instance_method">
   
-    - (<tt>Object</tt>) <strong>settings</strong>  <span class="extras">(readonly)</span>
   
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/RackInteraction.html" title="ReneeCore::RackInteraction (module)">RackInteraction</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/RackInteraction.html#build-instance_method" title="ReneeCore::RackInteraction#build (method)">#build</a></span>, <span class='object_link'><a href="ReneeCore/RackInteraction.html#build%21-instance_method" title="ReneeCore::RackInteraction#build! (method)">#build!</a></span>, <span class='object_link'><a href="ReneeCore/RackInteraction.html#run-instance_method" title="ReneeCore::RackInteraction#run (method)">#run</a></span>, <span class='object_link'><a href="ReneeCore/RackInteraction.html#run%21-instance_method" title="ReneeCore::RackInteraction#run! (method)">#run!</a></span></p>
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>The <span class='object_link'><a href="ReneeCore/Settings.html" title="ReneeCore::Settings (class)">Settings</a></span> object used to initialize this application.</p>
-
-
-  </div>
-</div>
-<div class="tags">
   
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-25
-26
-27</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 25</span>
-
-<span class='def def kw'>def</span> <span class='settings identifier id'>settings</span>
-  <span class='@settings ivar id'>@settings</span> <span class='opasgn op'>||=</span> <span class='Settings constant id'>Settings</span><span class='dot token'>.</span><span class='new identifier id'>new</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-    
-    
-      <div class="method_details first">
-  <p class="signature first" id="base_application_class-class_method">
   
-    + (<tt>Object</tt>) <strong>base_application_class</strong> 
   
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/Responding.html" title="ReneeCore::Responding (module)">Responding</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/Responding.html#halt-instance_method" title="ReneeCore::Responding#halt (method)">#halt</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html#interpret_response-instance_method" title="ReneeCore::Responding#interpret_response (method)">#interpret_response</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html#redirect-instance_method" title="ReneeCore::Responding#redirect (method)">#redirect</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html#redirect%21-instance_method" title="ReneeCore::Responding#redirect! (method)">#redirect!</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html#respond-instance_method" title="ReneeCore::Responding#respond (method)">#respond</a></span>, <span class='object_link'><a href="ReneeCore/Responding.html#respond%21-instance_method" title="ReneeCore::Responding#respond! (method)">#respond!</a></span></p>
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>The class used as the basis for calls made to ReneeCore</p>
-
-
-  </div>
-</div>
-<div class="tags">
   
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-72
-73
-74</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 72</span>
-
-<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='base_application_class identifier id'>base_application_class</span>
-  <span class='Application constant id'>Application</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-    
-    
-      <div class="method_details first">
-  <p class="signature first" id="call-instance_method">
   
-    - (<tt>Array</tt>) <strong>call</strong>(env) 
   
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/Routing.html" title="ReneeCore::Routing (module)">Routing</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/Routing.html#complete-instance_method" title="ReneeCore::Routing#complete (method)">#complete</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#delete-instance_method" title="ReneeCore::Routing#delete (method)">#delete</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#exact_path-instance_method" title="ReneeCore::Routing#exact_path (method)">#exact_path</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#extension-instance_method" title="ReneeCore::Routing#extension (method)">#extension</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#get-instance_method" title="ReneeCore::Routing#get (method)">#get</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#multi_variable-instance_method" title="ReneeCore::Routing#multi_variable (method)">#multi_variable</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#no_extension-instance_method" title="ReneeCore::Routing#no_extension (method)">#no_extension</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#part-instance_method" title="ReneeCore::Routing#part (method)">#part</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#partial_variable-instance_method" title="ReneeCore::Routing#partial_variable (method)">#partial_variable</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#path-instance_method" title="ReneeCore::Routing#path (method)">#path</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#post-instance_method" title="ReneeCore::Routing#post (method)">#post</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#put-instance_method" title="ReneeCore::Routing#put (method)">#put</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#query-instance_method" title="ReneeCore::Routing#query (method)">#query</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#query_string-instance_method" title="ReneeCore::Routing#query_string (method)">#query_string</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#remainder-instance_method" title="ReneeCore::Routing#remainder (method)">#remainder</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#repeating_variable-instance_method" title="ReneeCore::Routing#repeating_variable (method)">#repeating_variable</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#variable-instance_method" title="ReneeCore::Routing#variable (method)">#variable</a></span>, <span class='object_link'><a href="ReneeCore/Routing.html#whole_path-instance_method" title="ReneeCore::Routing#whole_path (method)">#whole_path</a></span></p>
 
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>This is a rack-compliant <code>Rack#call</code>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <h3>Parameters:</h3>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>env</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>The environment hash.</p>
-</div>
-      
-    </li>
   
-</ul>
-
-<h3>Returns:</h3>
-<ul class="return">
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Array</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'><p>A rack compliant return.</p>
-</div>
-      
-    </li>
   
-</ul>
-
-  <h3>See Also:</h3>
-  <ul class="see">
-    
-      <li><a href="http://rack.rubyforge.org/doc/SPEC.html" target="_parent" title="http://rack.rubyforge.org/doc/SPEC.html">http://rack.rubyforge.org/doc/SPEC.html</a></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-48
-49
-50</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 48</span>
-
-<span class='def def kw'>def</span> <span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
-  <span class='application_class identifier id'>application_class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='settings identifier id'>settings</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='application_block identifier id'>application_block</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="setup-instance_method">
   
-    - (<tt>Object</tt>) <strong>setup</strong>(path = nil, &amp;blk) 
   
-
   
-</p><div class="docstring">
-  <div class="discussion">
-    <p>Configure settings for your Renee application. Accepts a settings file path
-or a block containing the configuration settings.</p>
-
-
-  </div>
-</div>
-<div class="tags">
   
-  <div class="examples">
-    <h3>Examples:</h3>
-    
-      <h4><div class='inline'>
-</div></h4>
-      <pre class="example code"><span class='ReneeCore constant id'>ReneeCore</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='lbrace token'>{</span> <span class='dot3 op'>...</span> <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='setup identifier id'>setup</span> <span class='lbrace token'>{</span> <span class='views_path identifier id'>views_path</span> <span class='string val'>&quot;./views&quot;</span> <span class='rbrace token'>}</span>
-</pre>
-    
-  </div>
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ReneeCore/RequestContext.html" title="ReneeCore::RequestContext (module)">RequestContext</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ReneeCore/RequestContext.html#call-instance_method" title="ReneeCore::RequestContext#call (method)">#call</a></span></p>
 
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 60</span>
-
-<span class='def def kw'>def</span> <span class='setup identifier id'>setup</span><span class='lparen token'>(</span><span class='path identifier id'>path</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='string val'>&quot;You cannot supply both an argument and a block to the method.&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='path identifier id'>path</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span> <span class='bitxor op'>^</span> <span class='blk identifier id'>blk</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
-  <span class='case case kw'>case</span> <span class='path identifier id'>path</span>
-  <span class='when when kw'>when</span> <span class='nil nil kw'>nil</span>      <span class='then then kw'>then</span> <span class='settings identifier id'>settings</span><span class='dot token'>.</span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
-  <span class='when when kw'>when</span> <span class='Settings constant id'>Settings</span> <span class='then then kw'>then</span> <span class='@settings ivar id'>@settings</span> <span class='assign token'>=</span> <span class='path identifier id'>path</span>
-  <span class='when when kw'>when</span> <span class='String constant id'>String</span>   <span class='then then kw'>then</span> <span class='File constant id'>File</span><span class='dot token'>.</span><span class='exist? fid id'>exist?</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span> <span class='question op'>?</span> <span class='settings identifier id'>settings</span><span class='dot token'>.</span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='File constant id'>File</span><span class='dot token'>.</span><span class='read identifier id'>read</span><span class='lparen token'>(</span><span class='path identifier id'>path</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='path identifier id'>path</span><span class='comma token'>,</span> <span class='integer val'>1</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='dstring node'>&quot;The settings file #{path} does not exist&quot;</span><span class='rparen token'>)</span>
-  <span class='else else kw'>else</span>               <span class='raise identifier id'>raise</span> <span class='dstring node'>&quot;Could not setup with #{path.inspect}&quot;</span>
-  <span class='end end kw'>end</span>
-  <span class='self self kw'>self</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
 </div>
     
     <div id="footer">
-  Generated on Thu Oct 20 20:23:05 2011 by 
+  Generated on Fri Oct 21 16:39:33 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.8.7).
 </div>

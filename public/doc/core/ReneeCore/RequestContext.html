@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ReneeCore::RequestContext
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></span>
+     &raquo; 
+    <span class="title">RequestContext</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: ReneeCore::RequestContext
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../ReneeCore.html" title="ReneeCore (class)">ReneeCore</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee_core/request_context.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>This module deals with the Rack#call compilance. It defines #call and also defines several critical methods
+used by interaction by other application modules.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#detected_extension-instance_method" title="#detected_extension (instance method)">- (Object) <strong>detected_extension</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute detected_extension.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#env-instance_method" title="#env (instance method)">- (Object) <strong>env</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute env.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_index_request-instance_method" title="#is_index_request (instance method)">- (Object) <strong>is_index_request</strong> </a>
+    
+
+    
+      (also: #is_index_request?)
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute is_index_request.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#request-instance_method" title="#request (instance method)">- (Object) <strong>request</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute request.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#call-instance_method" title="#call (instance method)">- (Object) <strong>call</strong>(env) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Provides a rack interface compliant call method.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="detected_extension-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="detected_extension-instance_method">
+  
+    - (<tt>Object</tt>) <strong>detected_extension</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute detected_extension</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/request_context.rb', line 5</span>
+
+<span class='def def kw'>def</span> <span class='detected_extension identifier id'>detected_extension</span>
+  <span class='@detected_extension ivar id'>@detected_extension</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="env-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="env-instance_method">
+  
+    - (<tt>Object</tt>) <strong>env</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute env</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/request_context.rb', line 5</span>
+
+<span class='def def kw'>def</span> <span class='env identifier id'>env</span>
+  <span class='@env ivar id'>@env</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="is_index_request-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="is_index_request-instance_method">
+  
+    - (<tt>Object</tt>) <strong>is_index_request</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='is_index_request?-instance_method'>is_index_request?</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute is_index_request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/request_context.rb', line 5</span>
+
+<span class='def def kw'>def</span> <span class='is_index_request identifier id'>is_index_request</span>
+  <span class='@is_index_request ivar id'>@is_index_request</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="request-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="request-instance_method">
+  
+    - (<tt>Object</tt>) <strong>request</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/request_context.rb', line 5</span>
+
+<span class='def def kw'>def</span> <span class='request identifier id'>request</span>
+  <span class='@request ivar id'>@request</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="call-instance_method">
+  
+    - (<tt>Object</tt>) <strong>call</strong>(env) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Provides a rack interface compliant call method.
+@param[Hash] env The rack environment.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core/request_context.rb', line 10</span>
+
+<span class='def def kw'>def</span> <span class='call identifier id'>call</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
+  <span class='@env ivar id'>@env</span><span class='comma token'>,</span> <span class='@request ivar id'>@request</span> <span class='assign token'>=</span> <span class='env identifier id'>env</span><span class='comma token'>,</span> <span class='Rack constant id'>Rack</span><span class='colon2 op'>::</span><span class='Request constant id'>Request</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='env identifier id'>env</span><span class='rparen token'>)</span>
+  <span class='@detected_extension ivar id'>@detected_extension</span> <span class='assign token'>=</span> <span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='regexp val'>/\.([^\.\/]+)$/</span><span class='comma token'>,</span> <span class='integer val'>1</span><span class='rbrack token'>]</span>
+  <span class='@is_index_request ivar id'>@is_index_request</span> <span class='assign token'>=</span> <span class='env identifier id'>env</span><span class='lbrack token'>[</span><span class='string val'>'PATH_INFO'</span><span class='rbrack token'>]</span><span class='lbrack token'>[</span><span class='regexp val'>/^\/?$/</span><span class='rbrack token'>]</span>
+  <span class='comment val'># TODO clear template cache in development? `template_cache.clear`</span>
+  <span class='catch identifier id'>catch</span><span class='lparen token'>(</span><span class='symbol val'>:halt</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+    <span class='begin begin kw'>begin</span>
+      <span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='application_block identifier id'>application_block</span><span class='rparen token'>)</span>
+    <span class='rescue rescue kw'>rescue</span> <span class='ClientError constant id'>ClientError</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='e identifier id'>e</span>
+      <span class='e identifier id'>e</span><span class='dot token'>.</span><span class='response identifier id'>response</span> <span class='integer val'>? </span><span class='instance_eval identifier id'>instance_eval</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='e identifier id'>e</span><span class='dot token'>.</span><span class='response identifier id'>response</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='halt identifier id'>halt</span><span class='lparen token'>(</span><span class='string val'>&quot;There was an error with your request&quot;</span><span class='comma token'>,</span> <span class='integer val'>400</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span>
+    <span class='ReneeCore constant id'>ReneeCore</span><span class='colon2 op'>::</span><span class='Response constant id'>Response</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;Not found&quot;</span><span class='comma token'>,</span> <span class='integer val'>404</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='finish identifier id'>finish</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Oct 21 16:39:33 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

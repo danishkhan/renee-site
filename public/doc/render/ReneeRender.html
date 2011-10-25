@@ -92,6 +92,8 @@ using Tilt supporting all included template engines.</p>
 <p class="children">
    
     
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="ReneeRender/ClassMethods.html" title="ReneeRender::ClassMethods (module)">ClassMethods</a></span>
+    
    
     
       <strong class="classes">Classes:</strong> <span class='object_link'><a href="ReneeRender/TemplateNotFound.html" title="ReneeRender::TemplateNotFound (class)">TemplateNotFound</a></span>
@@ -334,19 +336,19 @@ using Tilt supporting all included template engines.</p>
       <pre class="lines">
 
 
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86</pre>
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 103</span>
 
 <span class='def def kw'>def</span> <span class='inline identifier id'>inline</span><span class='lparen token'>(</span><span class='data identifier id'>data</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
   <span class='options identifier id'>options</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span> <span class='assign token'>=</span> <span class='engine identifier id'>engine</span><span class='comma token'>,</span> <span class='nil nil kw'>nil</span> <span class='if if_mod kw'>if</span> <span class='engine identifier id'>engine</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Hash constant id'>Hash</span><span class='rparen token'>)</span>
@@ -462,13 +464,13 @@ using Tilt supporting all included template engines.</p>
       <pre class="lines">
 
 
-27
-28
-29
-30</pre>
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 53</span>
 
 <span class='def def kw'>def</span> <span class='inline! fid id'>inline!</span><span class='lparen token'>(</span><span class='data identifier id'>data</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
   <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:_caller</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='Callsite constant id'>Callsite</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span><span class='lparen token'>(</span><span class='caller identifier id'>caller</span><span class='dot token'>.</span><span class='first identifier id'>first</span><span class='rparen token'>)</span>
@@ -586,22 +588,22 @@ using Tilt supporting all included template engines.</p>
       <pre class="lines">
 
 
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60</pre>
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 74</span>
 
 <span class='def def kw'>def</span> <span class='render identifier id'>render</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
   <span class='options identifier id'>options</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span> <span class='assign token'>=</span> <span class='engine identifier id'>engine</span><span class='comma token'>,</span> <span class='nil nil kw'>nil</span> <span class='if if_mod kw'>if</span> <span class='engine identifier id'>engine</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Hash constant id'>Hash</span><span class='rparen token'>)</span>
@@ -722,12 +724,12 @@ using Tilt supporting all included template engines.</p>
       <pre class="lines">
 
 
-19
-20
-21</pre>
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/renee_render.rb', line 45</span>
 
 <span class='def def kw'>def</span> <span class='render! fid id'>render!</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
   <span class='halt identifier id'>halt</span> <span class='render identifier id'>render</span><span class='lparen token'>(</span><span class='file identifier id'>file</span><span class='comma token'>,</span> <span class='engine identifier id'>engine</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
@@ -743,7 +745,7 @@ using Tilt supporting all included template engines.</p>
 </div>
     
     <div id="footer">
-  Generated on Thu Oct 20 20:23:07 2011 by 
+  Generated on Fri Oct 21 16:39:34 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.8.7).
 </div>

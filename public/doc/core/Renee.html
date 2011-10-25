@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Class: Renee
+  Module: Renee
   
     &mdash; Renee
   
@@ -56,7 +56,7 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Class: Renee
+    <div id="content"><h1>Module: Renee
   
   
   
@@ -64,21 +64,6 @@
 
 <dl class="box">
   
-    <dt class="r1">Inherits:</dt>
-    <dd class="r1">
-      <span class="inheritName">Object</span>
-      
-        <ul class="fullTree">
-          <li>Object</li>
-          
-            <li class="next">Renee</li>
-          
-        </ul>
-        <a href="#" class="inheritanceTree">show all</a>
-      
-      </dd>
-    
-  
   
     
   
@@ -86,9 +71,9 @@
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/renee-core.rb<span class="defines">,<br />
-  lib/renee-core/version.rb,<br /> lib/renee-core/matcher.rb,<br /> lib/renee-core/response.rb,<br /> lib/renee-core/settings.rb,<br /> lib/renee-core/exceptions.rb,<br /> lib/renee-core/application.rb,<br /> lib/renee-core/url_generation.rb,<br /> lib/renee-core/application/routing.rb,<br /> lib/renee-core/application/chaining.rb,<br /> lib/renee-core/application/transform.rb,<br /> lib/renee-core/application/responding.rb,<br /> lib/renee-core/application/request_context.rb,<br /> lib/renee-core/application/rack_interaction.rb</span>
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/renee_core.rb<span class="defines">,<br />
+  lib/renee_core/version.rb,<br /> lib/renee_core/matcher.rb,<br /> lib/renee_core/routing.rb,<br /> lib/renee_core/response.rb,<br /> lib/renee_core/chaining.rb,<br /> lib/renee_core/transform.rb,<br /> lib/renee_core/exceptions.rb,<br /> lib/renee_core/responding.rb,<br /> lib/renee_core/env_accessors.rb,<br /> lib/renee_core/url_generation.rb,<br /> lib/renee_core/request_context.rb,<br /> lib/renee_core/rack_interaction.rb</span>
 </dd>
   
 </dl>
@@ -119,12 +104,104 @@
 
 
 
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#core-class_method" title="core (class method)">+ (Object) <strong>core</strong>(&amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="core-class_method">
+  
+    + (<tt>Object</tt>) <strong>core</strong>(&amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='Renee constant id'>Renee</span><span class='dot token'>.</span><span class='core identifier id'>core</span> <span class='lbrace token'>{</span> <span class='path identifier id'>path</span><span class='lparen token'>(</span><span class='string val'>'/hello'</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='halt identifier id'>halt</span> <span class='symbol val'>:ok</span> <span class='rbrace token'>}</span> <span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee_core.rb', line 18</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='core identifier id'>core</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span>
+  <span class='cls identifier id'>cls</span> <span class='assign token'>=</span> <span class='Class constant id'>Class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='Renee constant id'>Renee</span><span class='colon2 op'>::</span><span class='Core constant id'>Core</span><span class='rparen token'>)</span>
+  <span class='cls identifier id'>cls</span><span class='dot token'>.</span><span class='app identifier id'>app</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='blk identifier id'>blk</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='blk identifier id'>blk</span>
+  <span class='cls identifier id'>cls</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
     
     <div id="footer">
-  Generated on Wed Oct 19 20:33:47 2011 by 
+  Generated on Tue Oct 25 09:54:15 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.3 (ruby-1.8.7).
 </div>

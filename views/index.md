@@ -9,6 +9,8 @@
 
 This site was been built using Renee and is [available on Github](https://github.com/renee-project/renee-site).
 
+Want the 2 minute intro? Try out this deadly simple [tutorial](/tutorial).
+
 ## Concept (Why Renee?)
 
 **Renee is a new way to think about writing web applications.**
@@ -112,6 +114,24 @@ Okay, so, writing blocks is fun, but, it can get a bit indent-y when we don't re
 
 You can easily consume chaining yourself, if you want to implement your own routing methods. Find out [more](/chaining)!
 
+### Subclassing for great justice
+
+Not happy with what Renee gives you? You can easily subclass to define whatever you need.
+
+    :::ruby
+    class MyApp < Renee::Application
+      app {
+        path('justice/great').get.for_great_justice!
+        halt 404, "justice not found"
+      }
+
+      def for_great_justice!
+        halt "for great justice!"
+      end
+    end
+
+    run MyApp
+
 ## Getting started
 
 ### Installation
@@ -123,7 +143,7 @@ Renee is gem-based. If you're using rubygems, you can simply:
 If you're using [Bundler](http://gembundler.com/), you can add
 
     :::ruby
-    gem 'renee', '~> 0.0.1'
+    gem 'renee', '~> 0.3.0'
 
 to your `Gemfile`.
 
