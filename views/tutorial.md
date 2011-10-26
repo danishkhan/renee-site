@@ -7,7 +7,7 @@ This is the most basic ever tutorial, and admittedly, a lot of it is boilerplate
     :::terminal
     $> mkdir renee-tutorial
     $> cd renee-tutorial
-    $> Gemfile init
+    $> bundle init
     Writing new Gemfile to /Users/joshbuddy/Gemfile/renee-tutorial
     $> mate .
 
