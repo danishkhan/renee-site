@@ -7,7 +7,7 @@
       path('/') { halt "Hello Renee!" }
     }
 
-This site was been built using Renee and is [available on Github](https://github.com/renee-project/renee-site).
+This site was built using Renee and is [available on Github](https://github.com/renee-project/renee-site).
 
 Want the 2 minute intro? Try out this deadly simple [tutorial](/tutorial).
 
