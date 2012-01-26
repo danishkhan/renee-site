@@ -19,7 +19,7 @@ Want the 2 minute intro? Try out this deadly simple [tutorial](/tutorial).
 
 Traditionally, routing and controller logic have been separate. In Rails, for instance, your path is matched to a controller and an action. This does not reflect the hierarchical nature of REST.
 
-Consider a simple example. The route `/posts/45/comments`. Typically, you'd expect this to load the post with the id 45, and then load the comments on that post. In [Rails](http://rubyonrails.org/), your code to load a post and understand that parameter would have to be in both your posts controller and your comments controller. [Sinatra](http://www.sinatrarb.com/) does no better as it searches linearly though a list of path to find a matching path, and then executes the block associated with it.
+Consider a simple example. The route `/posts/45/comments`. Typically, you'd expect this to load the post with the id 45, and then load the comments on that post. In [Rails](http://rubyonrails.org/), your code to load a post and understand that parameter would have to be in both your posts controller and your comments controller. [Sinatra](http://www.sinatrarb.com/) does no better as it searches linearly through a list of paths to find a matching path, and then executes the block associated with it.
 
 To model this same idea in Renee, you could do the following:
 
